@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="本文介绍了 OpenWrt 的分类、选择、扩容及插件安装方法，并提供官方和 ImmortalWrt 的设置步骤，帮助用户快速搭建高效稳定的网络环境。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OpenWrt 从入门到精通：全面掌握 OpenWrt 使用与配置">
+<meta property="og:url" content="http://example.com/2025/07/15/OpenWrt%20%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%EF%BC%9A%E5%85%A8%E9%9D%A2%E6%8E%8C%E6%8F%A1%20OpenWrt%20%E4%BD%BF%E7%94%A8%E4%B8%8E%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="本文介绍了 OpenWrt 的分类、选择、扩容及插件安装方法，并提供官方和 ImmortalWrt 的设置步骤，帮助用户快速搭建高效稳定的网络环境。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://blog-pictures-bucket.oss-cn-beijing.aliyuncs.com/typora-tu-chuang/2025/07/15/7b8a0c112629c141ed981ff85618847b-bb2dbe60.webp">
+<meta property="og:image" content="https://blog-pictures-bucket.oss-cn-beijing.aliyuncs.com/typora-tu-chuang/2025/07/15/f0dc1aa2e41dc703b4c0541aaaa14a30-0d235357.webp">
+<meta property="og:image" content="https://blog-pictures-bucket.oss-cn-beijing.aliyuncs.com/typora-tu-chuang/2025/07/15/913065a1ba39c1298dfcbb0f90c731cf-a6df01f7.webp">
+<meta property="og:image" content="https://blog-pictures-bucket.oss-cn-beijing.aliyuncs.com/typora-tu-chuang/2025/07/15/6ec446b5faef68c4ecebda91f4fa1d01-bbcff145.webp">
+<meta property="article:published_time" content="2025-07-15T06:30:00.000Z">
+<meta property="article:modified_time" content="2025-07-23T02:43:10.296Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="软路由">
+<meta property="article:tag" content="网络代理">
+<meta property="article:tag" content="OpenWrt">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-pictures-bucket.oss-cn-beijing.aliyuncs.com/typora-tu-chuang/2025/07/15/7b8a0c112629c141ed981ff85618847b-bb2dbe60.webp">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>OpenWrt 从入门到精通：全面掌握 OpenWrt 使用与配置</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2025/07/18/%E8%A7%A3%E9%94%81%E4%B8%AA%E6%80%A7%E5%8C%96%E4%BD%93%E9%AA%8C%EF%BC%9ASpicetify%20%E6%94%B9%E9%80%A0%E4%BD%A0%E7%9A%84%20Spotify%20%E5%AE%A2%E6%88%B7%E7%AB%AF/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2025/07/06/%E3%80%90%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E3%80%91%E6%9C%80%E8%AF%A6%E7%BB%86%E7%9A%84%20Windows%20%E7%B3%BB%E7%BB%9F%E9%87%8D%E8%A3%85%E6%95%99%E7%A8%8B%20%20%E5%AE%89%E8%A3%85+%E6%BF%80%E6%B4%BB+%E5%88%86%E5%8C%BA+%E6%89%A9%E5%AE%B9/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2025/07/15/OpenWrt%20%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%EF%BC%9A%E5%85%A8%E9%9D%A2%E6%8E%8C%E6%8F%A1%20OpenWrt%20%E4%BD%BF%E7%94%A8%E4%B8%8E%E9%85%8D%E7%BD%AE/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2025/07/15/OpenWrt%20%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%EF%BC%9A%E5%85%A8%E9%9D%A2%E6%8E%8C%E6%8F%A1%20OpenWrt%20%E4%BD%BF%E7%94%A8%E4%B8%8E%E9%85%8D%E7%BD%AE/&text=OpenWrt 从入门到精通：全面掌握 OpenWrt 使用与配置"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2025/07/15/OpenWrt%20%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%EF%BC%9A%E5%85%A8%E9%9D%A2%E6%8E%8C%E6%8F%A1%20OpenWrt%20%E4%BD%BF%E7%94%A8%E4%B8%8E%E9%85%8D%E7%BD%AE/&title=OpenWrt 从入门到精通：全面掌握 OpenWrt 使用与配置"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2025/07/15/OpenWrt%20%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%EF%BC%9A%E5%85%A8%E9%9D%A2%E6%8E%8C%E6%8F%A1%20OpenWrt%20%E4%BD%BF%E7%94%A8%E4%B8%8E%E9%85%8D%E7%BD%AE/&is_video=false&description=OpenWrt 从入门到精通：全面掌握 OpenWrt 使用与配置"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=OpenWrt 从入门到精通：全面掌握 OpenWrt 使用与配置&body=Check out this article: http://example.com/2025/07/15/OpenWrt%20%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%EF%BC%9A%E5%85%A8%E9%9D%A2%E6%8E%8C%E6%8F%A1%20OpenWrt%20%E4%BD%BF%E7%94%A8%E4%B8%8E%E9%85%8D%E7%BD%AE/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2025/07/15/OpenWrt%20%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%EF%BC%9A%E5%85%A8%E9%9D%A2%E6%8E%8C%E6%8F%A1%20OpenWrt%20%E4%BD%BF%E7%94%A8%E4%B8%8E%E9%85%8D%E7%BD%AE/&title=OpenWrt 从入门到精通：全面掌握 OpenWrt 使用与配置"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2025/07/15/OpenWrt%20%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%EF%BC%9A%E5%85%A8%E9%9D%A2%E6%8E%8C%E6%8F%A1%20OpenWrt%20%E4%BD%BF%E7%94%A8%E4%B8%8E%E9%85%8D%E7%BD%AE/&title=OpenWrt 从入门到精通：全面掌握 OpenWrt 使用与配置"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2025/07/15/OpenWrt%20%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%EF%BC%9A%E5%85%A8%E9%9D%A2%E6%8E%8C%E6%8F%A1%20OpenWrt%20%E4%BD%BF%E7%94%A8%E4%B8%8E%E9%85%8D%E7%BD%AE/&title=OpenWrt 从入门到精通：全面掌握 OpenWrt 使用与配置"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2025/07/15/OpenWrt%20%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%EF%BC%9A%E5%85%A8%E9%9D%A2%E6%8E%8C%E6%8F%A1%20OpenWrt%20%E4%BD%BF%E7%94%A8%E4%B8%8E%E9%85%8D%E7%BD%AE/&title=OpenWrt 从入门到精通：全面掌握 OpenWrt 使用与配置"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2025/07/15/OpenWrt%20%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%EF%BC%9A%E5%85%A8%E9%9D%A2%E6%8E%8C%E6%8F%A1%20OpenWrt%20%E4%BD%BF%E7%94%A8%E4%B8%8E%E9%85%8D%E7%BD%AE/&name=OpenWrt 从入门到精通：全面掌握 OpenWrt 使用与配置&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2025/07/15/OpenWrt%20%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%EF%BC%9A%E5%85%A8%E9%9D%A2%E6%8E%8C%E6%8F%A1%20OpenWrt%20%E4%BD%BF%E7%94%A8%E4%B8%8E%E9%85%8D%E7%BD%AE/&t=OpenWrt 从入门到精通：全面掌握 OpenWrt 使用与配置"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#OpenWrt-%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">OpenWrt 简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OpenWrt-%E5%88%86%E7%B1%BB%E4%BB%A5%E5%8F%8A%E9%80%89%E6%8B%A9"><span class="toc-number">2.</span> <span class="toc-text">OpenWrt 分类以及选择</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#OpenWrt-%E5%88%86%E7%B1%BB"><span class="toc-number">2.1.</span> <span class="toc-text">OpenWrt  分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BA%E4%BB%B6%E9%80%89%E6%8B%A9"><span class="toc-number">2.2.</span> <span class="toc-text">固件选择</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OpenWrt-%E6%89%A9%E5%AE%B9"><span class="toc-number">3.</span> <span class="toc-text">OpenWrt  扩容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%89%8D%E7%9B%B4%E6%8E%A5%E6%89%A9%E5%AE%B9%E9%95%9C%E5%83%8F%EF%BC%88%E5%8F%AA%E6%9C%89-squashfs-%E5%9B%BA%E4%BB%B6%E6%9C%89%E6%95%88%EF%BC%89%EF%BC%9A"><span class="toc-number">3.1.</span> <span class="toc-text">安装前直接扩容镜像（只有 squashfs 固件有效）：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%90%8E%E6%89%A9%E5%AE%B9%E9%95%9C%E5%83%8F%EF%BC%9A"><span class="toc-number">3.2.</span> <span class="toc-text">安装后扩容镜像：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9AEXT4-%E6%A0%BC%E5%BC%8F-%E2%80%94%E2%80%94-%E6%89%A9%E5%AE%B9%E7%B3%BB%E7%BB%9F%E6%A0%B9%E7%9B%AE%E5%BD%95"><span class="toc-number">3.2.1.</span> <span class="toc-text">方法一：EXT4 格式 —— 扩容系统根目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%9ASQUASHFS-%E6%A0%BC%E5%BC%8F-%E2%80%94%E2%80%94-%E6%89%A9%E5%AE%B9-Overlay-%E5%88%86%E5%8C%BA"><span class="toc-number">3.2.2.</span> <span class="toc-text">方法二：SQUASHFS 格式 —— 扩容 Overlay 分区</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="toc-number">4.</span> <span class="toc-text">插件安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%98%E6%96%B9-OpenWrt-%E8%AE%BE%E7%BD%AE"><span class="toc-number">5.</span> <span class="toc-text">官方 OpenWrt  设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#OpenWrt-%E7%9A%84%E9%BB%98%E8%AE%A4%E7%99%BB%E5%BD%95%E4%BF%A1%E6%81%AF%EF%BC%9A"><span class="toc-number">5.1.</span> <span class="toc-text">OpenWrt 的默认登录信息：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#openwrt-%E6%9B%B4%E6%8D%A2%E9%95%9C%E5%83%8F%E6%BA%90"><span class="toc-number">5.2.</span> <span class="toc-text">openwrt 更换镜像源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%85%E5%A4%87%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="toc-number">5.3.</span> <span class="toc-text">必备插件安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E5%AE%9A%E7%BD%91%E5%85%B3%E3%80%81DNS%EF%BC%9A"><span class="toc-number">5.4.</span> <span class="toc-text">指定网关、DNS：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E6%96%B9-ImmortalWrt-%E8%AE%BE%E7%BD%AE"><span class="toc-number">6.</span> <span class="toc-text">三方 ImmortalWrt 设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%93%A6-%E5%BF%85%E8%A3%85%E6%8F%92%E4%BB%B6%EF%BC%88Luci-Apps-Themes%EF%BC%89"><span class="toc-number">6.1.</span> <span class="toc-text">📦 必装插件（Luci Apps &amp; Themes）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0"><span class="toc-number">7.</span> <span class="toc-text">参考文章</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        OpenWrt 从入门到精通：全面掌握 OpenWrt 使用与配置
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">John Doe</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2025-07-15T06:30:00.000Z" class="dt-published" itemprop="datePublished">2025-07-15</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/">技术教程</a> › <a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/OpenWrt/" rel="tag">OpenWrt</a>, <a class="p-category" href="/tags/%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86/" rel="tag">网络代理</a>, <a class="p-category" href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/" rel="tag">软路由</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <div class="video-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JfSJmPFiL_s?si=UNVeRNyW0tg2GrHE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+<style>
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 aspect ratio (height/width = 9/16 * 100%) */
+}
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+</style>
+
+<h2 id="OpenWrt-简介"><a href="#OpenWrt-简介" class="headerlink" title="OpenWrt 简介"></a>OpenWrt 简介</h2><p>OpenWrt 是一个基于 Linux 的<strong>开源嵌入式操作系统</strong> ，主要用于路由器和其他网络设备。它不仅仅是一个路由器固件，而是一个完整的、高度可定制的操作系统平台，允许用户对网络设备进行深度控制和功能扩展。</p>
+<p>常见固件：官方openwrt、immortalwrt、Lean固件、istore、其他</p>
+<p><img src="https://blog-pictures-bucket.oss-cn-beijing.aliyuncs.com/typora-tu-chuang/2025/07/15/7b8a0c112629c141ed981ff85618847b-bb2dbe60.webp" alt="设备准备"></p>
+<blockquote>
+<p>immortalwrt 和Lean是国内大部分用户的固件选择，也为大家更方便的使用openwrt做出了卓越贡献！<br>感谢天灵、Lean等大佬们的付出。</p>
+</blockquote>
+<p>英特尔CPU性能对比：<a target="_blank" rel="noopener" href="https://bulianglin.com/g/aHR0cHM6Ly93d3cuaW50ZWwuY24vY29udGVudC93d3cvY24vemgvc2VhcmNoLmh0bWw">https://bulianglin.com/g/aHR0cHM6Ly93d3cuaW50ZWwuY24vY29udGVudC93d3cvY24vemgvc2VhcmNoLmh0bWw</a></p>
+<p>OpenWrt 支持的设备：<a target="_blank" rel="noopener" href="https://openwrt.org/toh/start">https://openwrt.org/toh/start</a></p>
+<p><img src="https://blog-pictures-bucket.oss-cn-beijing.aliyuncs.com/typora-tu-chuang/2025/07/15/f0dc1aa2e41dc703b4c0541aaaa14a30-0d235357.webp" alt="支持的设备"></p>
+<h2 id="OpenWrt-分类以及选择"><a href="#OpenWrt-分类以及选择" class="headerlink" title="OpenWrt 分类以及选择"></a>OpenWrt 分类以及选择</h2><h3 id="OpenWrt-分类"><a href="#OpenWrt-分类" class="headerlink" title="OpenWrt  分类"></a>OpenWrt  分类</h3><p><strong>官方 openwrt</strong>：应用商店在国外，没有科学插件，可以看作官方正版windows11，更新及时，但是软件商店需要科学，以及安装科学插件比较麻烦、OpenWrt 22.03版本开始使用基于 nftables 的 firewall4 防火墙。</p>
+<p><strong>immortalwrt</strong>：openwrt的分支项目，从官方基础上做了针对中国用户的优化比如添加翻墙插件以及驱动方面的优化，软件源提供了大量常用的第三方插件，并且提供了cdn加速的镜像源，可以非常方便的安装和管理插件。同时跟随官方更新，改动较少，可以看作windows中国特供版，不足是新版本舍弃了旧版防火墙可能对老插件兼容不是很好， 23.05版本开始 firewall4 防火墙，之前有几个版本为了兼容性混用两种防火墙。</p>
+<p><strong>Lean的固件</strong>：在官方较早的一个分支版本上开发，没有跟随官方版本更新，但对大部分插件兼容性很好，应用商店不够完善，适合编译，可以看作windows7修改版，不足之处暂时不兼容新的插件比如homeproxy和MihomoTproxy。iptables 的 firewall3 防火墙。</p>
+<ul>
+<li>官方版本：<a target="_blank" rel="noopener" href="https://firmware-selector.openwrt.org/">https://firmware-selector.openwrt.org/</a></li>
+<li>immortalwrt：<a target="_blank" rel="noopener" href="https://firmware-selector.immortalwrt.org/">https://firmware-selector.immortalwrt.org/</a></li>
+<li>Lean官方构建：<a target="_blank" rel="noopener" href="https://github.com/coolsnowwolf/lede/actions">https://github.com/coolsnowwolf/lede/actions</a></li>
+</ul>
+<h3 id="固件选择"><a href="#固件选择" class="headerlink" title="固件选择"></a>固件选择</h3><p><strong>如果你没有特别多的插件以及老的插件使用需求，尽量选择官方 openwrt 或者 immortalwrt，</strong><br><strong>如果你喜欢折腾需要很多插件，但是不太使用较新的插件比如homeproxy、可以自行编译Lean，或者直接使用Lean自动构建的固件。</strong></p>
+<p>自定义构建参考Package：<a target="_blank" rel="noopener" href="https://downloads.immortalwrt.org/releases/23.05.1/packages/x86_64/luci/Packages">https://downloads.immortalwrt.org/releases/23.05.1/packages/x86_64/luci/Packages</a></p>
+<p>固件格式选择：如果是X86架构软路由尽量选择 <code>EXT4</code>, 唯一缺点不能重置，如果有经常重置需求选择 <code>SQUASHFS</code> 格式</p>
+<p><img src="https://blog-pictures-bucket.oss-cn-beijing.aliyuncs.com/typora-tu-chuang/2025/07/15/913065a1ba39c1298dfcbb0f90c731cf-a6df01f7.webp" alt="选择固件"></p>
+<blockquote>
+<p>❗ 不建议使用网上下载的第三方固件，无论其多么有名，都是基于上述源码编译而来，无法确保安全性和稳定性。</p>
+<p>另外，不要太在意固件名称和皮肤样式。这些都可以在编译时自定义，不影响性能。OpenWrt 本身是命令行系统，默认黑色主题虽然简陋但非常稳定。 </p>
+</blockquote>
+<h2 id="OpenWrt-扩容"><a href="#OpenWrt-扩容" class="headerlink" title="OpenWrt  扩容"></a>OpenWrt  扩容</h2><h3 id="安装前直接扩容镜像（只有-squashfs-固件有效）："><a href="#安装前直接扩容镜像（只有-squashfs-固件有效）：" class="headerlink" title="安装前直接扩容镜像（只有 squashfs 固件有效）："></a>安装前直接扩容镜像（只有 squashfs 固件有效）：</h3><p>需在 Linux 系统中操作，例如 OpenWrt、Debian、Ubuntu 等。</p>
+<p>检查是否具备所需依赖：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">which</span> gzip</span><br><span class="line"><span class="built_in">which</span> <span class="built_in">dd</span></span><br><span class="line"><span class="built_in">which</span> parted</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>Step1</strong>：把镜像上传至openwrt根目录（上传位置可以自己决定）</li>
+<li><strong>Step2</strong>：按顺序执行以下命令(命令中的镜像名字根据自己实际填写，以 <code>immortalwrt.img</code> 为例）<a target="_blank" rel="noopener" href="https://bulianglin.com/archives/openwrt.html">^1</a></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 切换到根目录</span></span><br><span class="line"><span class="built_in">cd</span> /</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 解压缩镜像文件</span></span><br><span class="line">gzip -kd immortalwrt.img.gz</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 解压成功后删除压缩包，方便后面选择文件</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 扩展镜像文件的大小 (count=500 表示增加 500MB 的空间)</span></span><br><span class="line"><span class="built_in">dd</span> <span class="keyword">if</span>=/dev/zero bs=1M count=500 &gt;&gt; immortalwrt.img</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 使用分区工具操作镜像</span></span><br><span class="line">parted immortalwrt.img</span><br><span class="line"><span class="comment"># 查看分区情况</span></span><br><span class="line"><span class="built_in">print</span></span><br><span class="line"><span class="comment"># 调整分区大小 (将第 2 个分区扩展至镜像文件的 100%)</span></span><br><span class="line">resizepart 2 100%</span><br><span class="line"><span class="comment"># 查看是否扩展成功</span></span><br><span class="line"><span class="built_in">print</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 退出分区工具</span></span><br><span class="line">quit</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>⚠️ 若为 EFI 固件，在扩容过程中会弹出额外选项，请选择 <code>Ok</code> 并选择 <code>Fix</code>。 </p>
+</blockquote>
+<h3 id="安装后扩容镜像："><a href="#安装后扩容镜像：" class="headerlink" title="安装后扩容镜像："></a>安装后扩容镜像：</h3><p><img src="https://blog-pictures-bucket.oss-cn-beijing.aliyuncs.com/typora-tu-chuang/2025/07/15/6ec446b5faef68c4ecebda91f4fa1d01-bbcff145.webp" alt="Snipaste_2025-07-15_16-31-05"></p>
+<h4 id="方法一：EXT4-格式-——-扩容系统根目录"><a href="#方法一：EXT4-格式-——-扩容系统根目录" class="headerlink" title="方法一：EXT4 格式 —— 扩容系统根目录"></a>方法一：EXT4 格式 —— 扩容系统根目录</h4><ol>
+<li>更新软件商店；</li>
+<li>安装 <code>diskman</code> 工具；</li>
+<li>在挂载点设置中，禁用“自动挂载”选项；</li>
+<li>创建一个 2GB 大小的新分区（根据需求调整大小），并将其格式化为 ext4 文件系统；</li>
+<li>将新分区挂载为系统根目录；</li>
+<li>复制提示的命令到记事本中，将命令中的 <code>/dev/sda1</code> 替换为实际的分区名称；</li>
+<li>在 SSH 中执行替换后的命令，回车运行直到完成；</li>
+<li>重启 openwrt；</li>
+</ol>
+<h4 id="方法二：SQUASHFS-格式-——-扩容-Overlay-分区"><a href="#方法二：SQUASHFS-格式-——-扩容-Overlay-分区" class="headerlink" title="方法二：SQUASHFS 格式 —— 扩容 Overlay 分区"></a>方法二：SQUASHFS 格式 —— 扩容 Overlay 分区</h4><ol>
+<li>前四步与方法一类似；</li>
+<li>将新分区挂载为&#x2F;mnt&#x2F;sda3 （目的是拷贝overlay文件用，sda3根据自己情况随意命名）</li>
+<li>SSH连接openwrt后执行命令：<code>cp -r /overlay/* /mnt/sda3</code> （将原overlay下的配置拷贝至新分区）</li>
+<li>查看新分区目录是否拷贝成功</li>
+<li>删除刚刚的&#x2F;mnt&#x2F;sda3 挂载</li>
+<li>将新分区重新挂载为overlay</li>
+<li>重启 openwrt</li>
+</ol>
+<p>具体参考：<a target="_blank" rel="noopener" href="https://www.qichiyu.com/183.html">openwrt基础配置 | openwrt固件选择、扩容、docker安装扩容、网络共享samba4安装配置</a></p>
+<h2 id="插件安装"><a href="#插件安装" class="headerlink" title="插件安装"></a>插件安装</h2><p>通过安装各种插件，你可以轻松实现广告过滤、科学上网、远程访问等多种高级功能。</p>
+<table>
+<thead>
+<tr>
+<th align="center">apk命令</th>
+<th align="center">opkg命令</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>apk update</code></td>
+<td align="center"><code>opkg update</code></td>
+<td align="center">刷新包源</td>
+</tr>
+<tr>
+<td align="center"><code>apk add pkg</code></td>
+<td align="center"><code>opkg install pkg</code></td>
+<td align="center">安装指定包</td>
+</tr>
+<tr>
+<td align="center"><code>apk del pkg</code></td>
+<td align="center"><code>opkg remove pkg</code></td>
+<td align="center">卸载指定包</td>
+</tr>
+</tbody></table>
+<h2 id="官方-OpenWrt-设置"><a href="#官方-OpenWrt-设置" class="headerlink" title="官方 OpenWrt  设置"></a>官方 OpenWrt  设置</h2><h3 id="OpenWrt-的默认登录信息："><a href="#OpenWrt-的默认登录信息：" class="headerlink" title="OpenWrt 的默认登录信息："></a>OpenWrt 的默认登录信息：</h3><ul>
+<li><p>地址：<code>http://192.168.1.1</code></p>
+</li>
+<li><p><strong>用户名</strong> : <code>root</code></p>
+</li>
+<li><p><strong>密码</strong> : <strong>未设置（首次登录不需要密码）</strong></p>
+</li>
+</ul>
+<h3 id="openwrt-更换镜像源"><a href="#openwrt-更换镜像源" class="headerlink" title="openwrt 更换镜像源"></a>openwrt 更换镜像源</h3><p>用 ssh 工具连接 OpenWrt，随便输入下面的命令进行换源：</p>
+<ol>
+<li>中科大：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i <span class="string">&#x27;s/downloads.openwrt.org/mirrors.ustc.edu.cn\/openwrt/g&#x27;</span> /etc/opkg/distfeeds.conf</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>清华源：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i <span class="string">&#x27;s_https\?://downloads.openwrt.org_https://mirrors.tuna.tsinghua.edu.cn/openwrt_&#x27;</span> /etc/opkg/distfeeds.conf</span><br></pre></td></tr></table></figure>
+
+<h3 id="必备插件安装"><a href="#必备插件安装" class="headerlink" title="必备插件安装"></a>必备插件安装</h3><ol>
+<li>汉化界面</li>
+</ol>
+<p><strong>24.10版本以后</strong>，汉化搜索安装下面三个插件即可；</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">luci-i18n-base-zh-cn          # 最重要</span><br><span class="line">luci-i18n-firewall-zh-cn</span><br><span class="line">luci-i18n-package-manager-zh-cn</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><p><strong>SFTP</strong> 服务</p>
+<p>安装 openssh-sftp-server 提供通过 SSH 加密通道进行安全文件传输（SFTP）的服务。</p>
+</li>
+<li><p>安装argon主题</p>
+<p>参考：<a target="_blank" rel="noopener" href="https://github.com/jerrykuku/luci-theme-argon/blob/master/README_ZH.md">luci-theme-argon&#x2F;README_ZH.md at master · jerrykuku&#x2F;luci-theme-argon</a></p>
+</li>
+</ol>
+<h3 id="指定网关、DNS："><a href="#指定网关、DNS：" class="headerlink" title="指定网关、DNS："></a>指定网关、DNS：</h3><p><code>tag:proxy,3,192.168.10.2</code>：所有proxy标签的设备都分配网关为192.168.10.2</p>
+<p><code>tag:proxy,6,192.168.10.2</code>：所有proxy标签的设备都分配DNS为192.168.10.2</p>
+<h2 id="三方-ImmortalWrt-设置"><a href="#三方-ImmortalWrt-设置" class="headerlink" title="三方 ImmortalWrt 设置"></a>三方 ImmortalWrt 设置</h2><p>ImmortalWrt 的默认登录信息与 OpenWrt 类似；</p>
+<h3 id="📦-必装插件（Luci-Apps-Themes）"><a href="#📦-必装插件（Luci-Apps-Themes）" class="headerlink" title="📦 必装插件（Luci Apps &amp; Themes）"></a>📦 必装插件（Luci Apps &amp; Themes）</h3><p>直接在<code>软件包</code>界面搜索下面插件安装即可，如果搜不到可以进行离线安装；</p>
+<table>
+<thead>
+<tr>
+<th align="center">插件名称</th>
+<th align="center">功能简述</th>
+<th align="center">用途说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>luci-theme-argon</code></td>
+<td align="center">Argon 主题皮肤</td>
+<td align="center">提供美观现代的 Web 管理界面主题</td>
+</tr>
+<tr>
+<td align="center"><code>luci-i18n-ttyd-zh-cn</code></td>
+<td align="center">ttyd 的中文包</td>
+<td align="center">支持浏览器终端服务界面显示为中文</td>
+</tr>
+<tr>
+<td align="center"><code>luci-app-openclash</code></td>
+<td align="center">OpenClash 客户端</td>
+<td align="center">强大的科学上网图形化配置工具</td>
+</tr>
+<tr>
+<td align="center"><code>luci-i18n-passwall-zh-cn</code></td>
+<td align="center">PassWall 中文包</td>
+<td align="center">网络代理</td>
+</tr>
+<tr>
+<td align="center"><code>luci-i18n-homeproxy-zh-cn</code></td>
+<td align="center">HomeProxy 中文包</td>
+<td align="center">网络代理</td>
+</tr>
+</tbody></table>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2>
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#OpenWrt-%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">OpenWrt 简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OpenWrt-%E5%88%86%E7%B1%BB%E4%BB%A5%E5%8F%8A%E9%80%89%E6%8B%A9"><span class="toc-number">2.</span> <span class="toc-text">OpenWrt 分类以及选择</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#OpenWrt-%E5%88%86%E7%B1%BB"><span class="toc-number">2.1.</span> <span class="toc-text">OpenWrt  分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BA%E4%BB%B6%E9%80%89%E6%8B%A9"><span class="toc-number">2.2.</span> <span class="toc-text">固件选择</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OpenWrt-%E6%89%A9%E5%AE%B9"><span class="toc-number">3.</span> <span class="toc-text">OpenWrt  扩容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%89%8D%E7%9B%B4%E6%8E%A5%E6%89%A9%E5%AE%B9%E9%95%9C%E5%83%8F%EF%BC%88%E5%8F%AA%E6%9C%89-squashfs-%E5%9B%BA%E4%BB%B6%E6%9C%89%E6%95%88%EF%BC%89%EF%BC%9A"><span class="toc-number">3.1.</span> <span class="toc-text">安装前直接扩容镜像（只有 squashfs 固件有效）：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%90%8E%E6%89%A9%E5%AE%B9%E9%95%9C%E5%83%8F%EF%BC%9A"><span class="toc-number">3.2.</span> <span class="toc-text">安装后扩容镜像：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9AEXT4-%E6%A0%BC%E5%BC%8F-%E2%80%94%E2%80%94-%E6%89%A9%E5%AE%B9%E7%B3%BB%E7%BB%9F%E6%A0%B9%E7%9B%AE%E5%BD%95"><span class="toc-number">3.2.1.</span> <span class="toc-text">方法一：EXT4 格式 —— 扩容系统根目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%9ASQUASHFS-%E6%A0%BC%E5%BC%8F-%E2%80%94%E2%80%94-%E6%89%A9%E5%AE%B9-Overlay-%E5%88%86%E5%8C%BA"><span class="toc-number">3.2.2.</span> <span class="toc-text">方法二：SQUASHFS 格式 —— 扩容 Overlay 分区</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="toc-number">4.</span> <span class="toc-text">插件安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%98%E6%96%B9-OpenWrt-%E8%AE%BE%E7%BD%AE"><span class="toc-number">5.</span> <span class="toc-text">官方 OpenWrt  设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#OpenWrt-%E7%9A%84%E9%BB%98%E8%AE%A4%E7%99%BB%E5%BD%95%E4%BF%A1%E6%81%AF%EF%BC%9A"><span class="toc-number">5.1.</span> <span class="toc-text">OpenWrt 的默认登录信息：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#openwrt-%E6%9B%B4%E6%8D%A2%E9%95%9C%E5%83%8F%E6%BA%90"><span class="toc-number">5.2.</span> <span class="toc-text">openwrt 更换镜像源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%85%E5%A4%87%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="toc-number">5.3.</span> <span class="toc-text">必备插件安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E5%AE%9A%E7%BD%91%E5%85%B3%E3%80%81DNS%EF%BC%9A"><span class="toc-number">5.4.</span> <span class="toc-text">指定网关、DNS：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E6%96%B9-ImmortalWrt-%E8%AE%BE%E7%BD%AE"><span class="toc-number">6.</span> <span class="toc-text">三方 ImmortalWrt 设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%93%A6-%E5%BF%85%E8%A3%85%E6%8F%92%E4%BB%B6%EF%BC%88Luci-Apps-Themes%EF%BC%89"><span class="toc-number">6.1.</span> <span class="toc-text">📦 必装插件（Luci Apps &amp; Themes）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0"><span class="toc-number">7.</span> <span class="toc-text">参考文章</span></a></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2025/07/15/OpenWrt%20%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%EF%BC%9A%E5%85%A8%E9%9D%A2%E6%8E%8C%E6%8F%A1%20OpenWrt%20%E4%BD%BF%E7%94%A8%E4%B8%8E%E9%85%8D%E7%BD%AE/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2025/07/15/OpenWrt%20%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%EF%BC%9A%E5%85%A8%E9%9D%A2%E6%8E%8C%E6%8F%A1%20OpenWrt%20%E4%BD%BF%E7%94%A8%E4%B8%8E%E9%85%8D%E7%BD%AE/&text=OpenWrt 从入门到精通：全面掌握 OpenWrt 使用与配置"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2025/07/15/OpenWrt%20%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%EF%BC%9A%E5%85%A8%E9%9D%A2%E6%8E%8C%E6%8F%A1%20OpenWrt%20%E4%BD%BF%E7%94%A8%E4%B8%8E%E9%85%8D%E7%BD%AE/&title=OpenWrt 从入门到精通：全面掌握 OpenWrt 使用与配置"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2025/07/15/OpenWrt%20%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%EF%BC%9A%E5%85%A8%E9%9D%A2%E6%8E%8C%E6%8F%A1%20OpenWrt%20%E4%BD%BF%E7%94%A8%E4%B8%8E%E9%85%8D%E7%BD%AE/&is_video=false&description=OpenWrt 从入门到精通：全面掌握 OpenWrt 使用与配置"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=OpenWrt 从入门到精通：全面掌握 OpenWrt 使用与配置&body=Check out this article: http://example.com/2025/07/15/OpenWrt%20%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%EF%BC%9A%E5%85%A8%E9%9D%A2%E6%8E%8C%E6%8F%A1%20OpenWrt%20%E4%BD%BF%E7%94%A8%E4%B8%8E%E9%85%8D%E7%BD%AE/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2025/07/15/OpenWrt%20%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%EF%BC%9A%E5%85%A8%E9%9D%A2%E6%8E%8C%E6%8F%A1%20OpenWrt%20%E4%BD%BF%E7%94%A8%E4%B8%8E%E9%85%8D%E7%BD%AE/&title=OpenWrt 从入门到精通：全面掌握 OpenWrt 使用与配置"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2025/07/15/OpenWrt%20%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%EF%BC%9A%E5%85%A8%E9%9D%A2%E6%8E%8C%E6%8F%A1%20OpenWrt%20%E4%BD%BF%E7%94%A8%E4%B8%8E%E9%85%8D%E7%BD%AE/&title=OpenWrt 从入门到精通：全面掌握 OpenWrt 使用与配置"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2025/07/15/OpenWrt%20%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%EF%BC%9A%E5%85%A8%E9%9D%A2%E6%8E%8C%E6%8F%A1%20OpenWrt%20%E4%BD%BF%E7%94%A8%E4%B8%8E%E9%85%8D%E7%BD%AE/&title=OpenWrt 从入门到精通：全面掌握 OpenWrt 使用与配置"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2025/07/15/OpenWrt%20%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%EF%BC%9A%E5%85%A8%E9%9D%A2%E6%8E%8C%E6%8F%A1%20OpenWrt%20%E4%BD%BF%E7%94%A8%E4%B8%8E%E9%85%8D%E7%BD%AE/&title=OpenWrt 从入门到精通：全面掌握 OpenWrt 使用与配置"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2025/07/15/OpenWrt%20%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%EF%BC%9A%E5%85%A8%E9%9D%A2%E6%8E%8C%E6%8F%A1%20OpenWrt%20%E4%BD%BF%E7%94%A8%E4%B8%8E%E9%85%8D%E7%BD%AE/&name=OpenWrt 从入门到精通：全面掌握 OpenWrt 使用与配置&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2025/07/15/OpenWrt%20%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%EF%BC%9A%E5%85%A8%E9%9D%A2%E6%8E%8C%E6%8F%A1%20OpenWrt%20%E4%BD%BF%E7%94%A8%E4%B8%8E%E9%85%8D%E7%BD%AE/&t=OpenWrt 从入门到精通：全面掌握 OpenWrt 使用与配置"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2025
+    John Doe
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
