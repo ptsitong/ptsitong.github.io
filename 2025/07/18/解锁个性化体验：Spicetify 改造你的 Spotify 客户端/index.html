@@ -1,117 +1,188 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang=en>
 <head>
-  <meta charset="utf-8">
-  
-  
-  
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
     <meta name="description" content="本文介绍了如何使用 Spicetify 对 Spotify 进行个性化优化，包括去广告、换主题、增强歌词显示等功能，提升音乐体验。">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>解锁个性化体验：Spicetify 改造你的 Spotify 客户端 |  Hexo</title>
-  <title>解锁个性化体验：Spicetify 改造你的 Spotify 客户端 |  Hexo</title>
-  
-    <link rel="apple-touch-icon" sizes="57x57" href="/images/webclip/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/images/webclip/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/images/webclip/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/images/webclip/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/images/webclip/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/images/webclip/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/images/webclip/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/webclip/apple-touch-icon-180x180.png">
-    <link rel="apple-touch-icon" sizes="167x167" href="/images/webclip/apple-touch-icon-167x167.png">
-  
-  
-    <link rel="shortcut icon" href="/favicon.ico">
-  
-  
-  
+<meta property="og:type" content="article">
+<meta property="og:title" content="解锁个性化体验：Spicetify 改造你的 Spotify 客户端">
+<meta property="og:url" content="http://example.com/2025/07/18/%E8%A7%A3%E9%94%81%E4%B8%AA%E6%80%A7%E5%8C%96%E4%BD%93%E9%AA%8C%EF%BC%9ASpicetify%20%E6%94%B9%E9%80%A0%E4%BD%A0%E7%9A%84%20Spotify%20%E5%AE%A2%E6%88%B7%E7%AB%AF/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="本文介绍了如何使用 Spicetify 对 Spotify 进行个性化优化，包括去广告、换主题、增强歌词显示等功能，提升音乐体验。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://blog-pictures-bucket.oss-cn-beijing.aliyuncs.com/typora-tu-chuang/2025/07/18/dc6999f0358d876a120fd876ec1df802-3f80dbbe.webp">
+<meta property="og:image" content="https://blog-pictures-bucket.oss-cn-beijing.aliyuncs.com/typora-tu-chuang/2024%2F03%2F10%2Fe6e505146cc0c126f5a46c2526970e42-45482216.png">
+<meta property="og:image" content="https://blog-pictures-bucket.oss-cn-beijing.aliyuncs.com/typora-tu-chuang/2024%2F03%2F10%2F75d23c4bb947edf4bad920ce73e19be3-df76bcf3.png">
+<meta property="og:image" content="https://blog-pictures-bucket.oss-cn-beijing.aliyuncs.com/typora-tu-chuang/2024%2F03%2F10%2Fbd7dc695684dcd6884b9f2f3c25dda76-7b0b3911.png">
+<meta property="og:image" content="https://blog-pictures-bucket.oss-cn-beijing.aliyuncs.com/typora-tu-chuang/2024%2F03%2F10%2F2d3bbcc1d00367d7622b48bfeb0a873e-af4d5ebb.png">
+<meta property="og:image" content="https://blog-pictures-bucket.oss-cn-beijing.aliyuncs.com/typora-tu-chuang/2025/07/18/a43845a72b5f21973737976dce0c1bb8-ce63314d.webp">
+<meta property="og:image" content="https://blog-pictures-bucket.oss-cn-beijing.aliyuncs.com/typora-tu-chuang/2024%2F03%2F10%2Fbc0b5c5ae25d95a4b96d58439875ac1e-c6f0b0ad.png">
+<meta property="og:image" content="https://blog-pictures-bucket.oss-cn-beijing.aliyuncs.com/typora-tu-chuang/2024%2F03%2F10%2F5ddea73a29ab86391401b230abf20740-6f2ef6e5.png">
+<meta property="og:image" content="https://blog-pictures-bucket.oss-cn-beijing.aliyuncs.com/typora-tu-chuang/2024%2F03%2F10%2Fc0780118def6f959992bff9c97351b54-b899e83f.png">
+<meta property="og:image" content="https://blog-pictures-bucket.oss-cn-beijing.aliyuncs.com/typora-tu-chuang/2025/07/18/139e75a5b22947e95d79032dc6a1dc39-f0fde2b8.webp">
+<meta property="og:image" content="https://blog-pictures-bucket.oss-cn-beijing.aliyuncs.com/typora-tu-chuang/2024%2F03%2F10%2Ff38b59d2b9dc7f4cc7d55e344308d457-9adeddd3.png">
+<meta property="og:image" content="https://blog-pictures-bucket.oss-cn-beijing.aliyuncs.com/typora-tu-chuang/2025/07/18/ff5b9a9cdf5c6063c49e8097e23a43b9-3fc9a0ff.webp">
+<meta property="og:image" content="https://blog-pictures-bucket.oss-cn-beijing.aliyuncs.com/typora-tu-chuang/2024%2F03%2F10%2Ff9fefb7b0434210236513ac7eac34253-e26d07b1.png">
+<meta property="og:image" content="https://blog-pictures-bucket.oss-cn-beijing.aliyuncs.com/typora-tu-chuang/2025/07/18/94eddd2bfd9ced59d6a00fd9d2ec65ab-699f1772.webp">
+<meta property="article:published_time" content="2025-07-18T13:02:00.000Z">
+<meta property="article:modified_time" content="2025-07-23T05:29:56.107Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Spotify 美化">
+<meta property="article:tag" content="Spicetify">
+<meta property="article:tag" content="Lyricify 歌词">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-pictures-bucket.oss-cn-beijing.aliyuncs.com/typora-tu-chuang/2025/07/18/dc6999f0358d876a120fd876ec1df802-3f80dbbe.webp">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>解锁个性化体验：Spicetify 改造你的 Spotify 客户端</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
 <link rel="stylesheet" href="/css/style.css">
 
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
 <meta name="generator" content="Hexo 7.3.0"></head>
 
-<body>
-  <main class="main">
+<body class="max-width mx-auto px3 ltr">
     
-	<header class="header">
-
-	<div class="container">
-		<nav class="navbar d-flex align-items-center">
-			<a class="brand" href="/">
-				<img class="logo" src="/images/brand.svg" alt="Hexo" role="img">
-			</a>
-			<ul class="main-nav">
-  
-    
-  <li class="nav-item ">
-    <a class="nav-item-link" href="/">首页</a>
-  </li>
-  
-    
-  <li class="nav-item ">
-    <a class="nav-item-link" href="/gallery">画廊</a>
-  </li>
-  
-    
-  <li class="nav-item ">
-    <a class="nav-item-link" href="/stories">案例</a>
-  </li>
-  
-    
-  <li class="nav-item ">
-    <a class="nav-item-link" href="/archives">新闻</a>
-  </li>
-  
-    
-  <li class="nav-item ">
-    <a class="nav-item-link" href="/about">关于</a>
-  </li>
-  
-</ul>
-		</nav>
-		<a id="mobile-nav-toggle">
-			<span class="mobile-nav-toggle-bar"></span>
-			<span class="mobile-nav-toggle-bar"></span>
-			<span class="mobile-nav-toggle-bar"></span>
-		</a>
-	</div>
-</header>
-
-    <section>
-      <div class="container">
-  <article id="post-解锁个性化体验：Spicetify 改造你的 Spotify 客户端" class="article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  
-  
-  <div class="artcle-cover mb-5">
-    
-  </div>
-  
-  <div class="article-inner">
-    
-    <header class="article-header">
-      
-      
-  
-    <h1 class="article-title" itemprop="name">
-      解锁个性化体验：Spicetify 改造你的 Spotify 客户端
-    </h1>
-  
-
-      <div class="article-meta">
-        <time class="text-gray" datetime="2025-07-18T13:02:00.000Z" itemprop="datePublished">
-  2025-07-18
-</time>
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
         
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/">技术教程</a>►<a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
-  </div>
+        <li><a class="icon" aria-label="Previous post" href="/2025/07/24/hello-world/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2025/07/15/OpenWrt%20%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%EF%BC%9A%E5%85%A8%E9%9D%A2%E6%8E%8C%E6%8F%A1%20OpenWrt%20%E4%BD%BF%E7%94%A8%E4%B8%8E%E9%85%8D%E7%BD%AE/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2025/07/18/%E8%A7%A3%E9%94%81%E4%B8%AA%E6%80%A7%E5%8C%96%E4%BD%93%E9%AA%8C%EF%BC%9ASpicetify%20%E6%94%B9%E9%80%A0%E4%BD%A0%E7%9A%84%20Spotify%20%E5%AE%A2%E6%88%B7%E7%AB%AF/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2025/07/18/%E8%A7%A3%E9%94%81%E4%B8%AA%E6%80%A7%E5%8C%96%E4%BD%93%E9%AA%8C%EF%BC%9ASpicetify%20%E6%94%B9%E9%80%A0%E4%BD%A0%E7%9A%84%20Spotify%20%E5%AE%A2%E6%88%B7%E7%AB%AF/&text=解锁个性化体验：Spicetify 改造你的 Spotify 客户端"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2025/07/18/%E8%A7%A3%E9%94%81%E4%B8%AA%E6%80%A7%E5%8C%96%E4%BD%93%E9%AA%8C%EF%BC%9ASpicetify%20%E6%94%B9%E9%80%A0%E4%BD%A0%E7%9A%84%20Spotify%20%E5%AE%A2%E6%88%B7%E7%AB%AF/&title=解锁个性化体验：Spicetify 改造你的 Spotify 客户端"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2025/07/18/%E8%A7%A3%E9%94%81%E4%B8%AA%E6%80%A7%E5%8C%96%E4%BD%93%E9%AA%8C%EF%BC%9ASpicetify%20%E6%94%B9%E9%80%A0%E4%BD%A0%E7%9A%84%20Spotify%20%E5%AE%A2%E6%88%B7%E7%AB%AF/&is_video=false&description=解锁个性化体验：Spicetify 改造你的 Spotify 客户端"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=解锁个性化体验：Spicetify 改造你的 Spotify 客户端&body=Check out this article: http://example.com/2025/07/18/%E8%A7%A3%E9%94%81%E4%B8%AA%E6%80%A7%E5%8C%96%E4%BD%93%E9%AA%8C%EF%BC%9ASpicetify%20%E6%94%B9%E9%80%A0%E4%BD%A0%E7%9A%84%20Spotify%20%E5%AE%A2%E6%88%B7%E7%AB%AF/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2025/07/18/%E8%A7%A3%E9%94%81%E4%B8%AA%E6%80%A7%E5%8C%96%E4%BD%93%E9%AA%8C%EF%BC%9ASpicetify%20%E6%94%B9%E9%80%A0%E4%BD%A0%E7%9A%84%20Spotify%20%E5%AE%A2%E6%88%B7%E7%AB%AF/&title=解锁个性化体验：Spicetify 改造你的 Spotify 客户端"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2025/07/18/%E8%A7%A3%E9%94%81%E4%B8%AA%E6%80%A7%E5%8C%96%E4%BD%93%E9%AA%8C%EF%BC%9ASpicetify%20%E6%94%B9%E9%80%A0%E4%BD%A0%E7%9A%84%20Spotify%20%E5%AE%A2%E6%88%B7%E7%AB%AF/&title=解锁个性化体验：Spicetify 改造你的 Spotify 客户端"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2025/07/18/%E8%A7%A3%E9%94%81%E4%B8%AA%E6%80%A7%E5%8C%96%E4%BD%93%E9%AA%8C%EF%BC%9ASpicetify%20%E6%94%B9%E9%80%A0%E4%BD%A0%E7%9A%84%20Spotify%20%E5%AE%A2%E6%88%B7%E7%AB%AF/&title=解锁个性化体验：Spicetify 改造你的 Spotify 客户端"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2025/07/18/%E8%A7%A3%E9%94%81%E4%B8%AA%E6%80%A7%E5%8C%96%E4%BD%93%E9%AA%8C%EF%BC%9ASpicetify%20%E6%94%B9%E9%80%A0%E4%BD%A0%E7%9A%84%20Spotify%20%E5%AE%A2%E6%88%B7%E7%AB%AF/&title=解锁个性化体验：Spicetify 改造你的 Spotify 客户端"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2025/07/18/%E8%A7%A3%E9%94%81%E4%B8%AA%E6%80%A7%E5%8C%96%E4%BD%93%E9%AA%8C%EF%BC%9ASpicetify%20%E6%94%B9%E9%80%A0%E4%BD%A0%E7%9A%84%20Spotify%20%E5%AE%A2%E6%88%B7%E7%AB%AF/&name=解锁个性化体验：Spicetify 改造你的 Spotify 客户端&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2025/07/18/%E8%A7%A3%E9%94%81%E4%B8%AA%E6%80%A7%E5%8C%96%E4%BD%93%E9%AA%8C%EF%BC%9ASpicetify%20%E6%94%B9%E9%80%A0%E4%BD%A0%E7%9A%84%20Spotify%20%E5%AE%A2%E6%88%B7%E7%AB%AF/&t=解锁个性化体验：Spicetify 改造你的 Spotify 客户端"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
 
-      </div>
-      
-    </header>
+    </div>
     
-    <div class="article-entry" itemprop="articleBody">
-      <blockquote>
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spicetify-%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">2.</span> <span class="toc-text">Spicetify 是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spicetify-%E5%AE%89%E8%A3%85"><span class="toc-number">3.</span> <span class="toc-text">Spicetify 安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">3.1.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows-%E5%B9%B3%E5%8F%B0"><span class="toc-number">3.2.</span> <span class="toc-text">Windows 平台</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux-%E5%92%8C-MacOS"><span class="toc-number">3.3.</span> <span class="toc-text">Linux 和 MacOS</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Shell%EF%BC%88%E9%A2%84%E6%9E%84%E5%BB%BA%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6%EF%BC%89"><span class="toc-number">3.3.1.</span> <span class="toc-text">Shell（预构建二进制文件）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">4.</span> <span class="toc-text">使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#spicetify-%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4"><span class="toc-number">4.1.</span> <span class="toc-text">spicetify 常见命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%B8%E8%BD%BD"><span class="toc-number">4.2.</span> <span class="toc-text">插件安装与卸载</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%A9%E5%B1%95%E5%AD%98%E5%82%A8%E8%B7%AF%E5%BE%84"><span class="toc-number">4.2.1.</span> <span class="toc-text">扩展存储路径</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%B8%E8%BD%BD-1"><span class="toc-number">4.2.2.</span> <span class="toc-text">插件安装与卸载</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E6%9B%B4%E6%96%B0"><span class="toc-number">4.3.</span> <span class="toc-text">软件更新</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A8%E8%8D%90%E6%8F%92%E4%BB%B6"><span class="toc-number">4.4.</span> <span class="toc-text">推荐插件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Full-App-Display%EF%BC%88%E5%B8%82%E5%9C%BA%EF%BC%89"><span class="toc-number">4.4.1.</span> <span class="toc-text">Full App Display（市场）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Full-Screen%EF%BC%88%E5%B8%82%E5%9C%BA%EF%BC%89"><span class="toc-number">4.4.2.</span> <span class="toc-text">Full Screen（市场）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Lyrics-Plus"><span class="toc-number">4.4.3.</span> <span class="toc-text">Lyrics Plus</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Adblock%EF%BC%88%E5%B8%82%E5%9C%BA%EF%BC%89"><span class="toc-number">4.4.4.</span> <span class="toc-text">Adblock（市场）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#New-Releases"><span class="toc-number">4.4.5.</span> <span class="toc-text">New Releases</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spicetify-%E5%8D%B8%E8%BD%BD"><span class="toc-number">4.5.</span> <span class="toc-text">Spicetify 卸载</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Windows"><span class="toc-number">4.5.1.</span> <span class="toc-text">Windows</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Linux-and-MacOS"><span class="toc-number">4.5.2.</span> <span class="toc-text">Linux and MacOS</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98"><span class="toc-number">5.</span> <span class="toc-text">更换主题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E5%AE%9E%E7%8E%B0"><span class="toc-number">5.1.</span> <span class="toc-text">命令实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%8B%E5%8A%A8%E5%AE%9E%E7%8E%B0"><span class="toc-number">5.2.</span> <span class="toc-text">手动实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E4%B8%BB%E9%A2%98"><span class="toc-number">5.3.</span> <span class="toc-text">切换主题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%88%E7%AB%AF%E7%9B%B4%E6%8E%A5%E5%88%87%E6%8D%A2"><span class="toc-number">5.3.1.</span> <span class="toc-text">终端直接切换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">5.3.2.</span> <span class="toc-text">修改配置文件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%8C%E8%AF%8D%E8%BD%AF%E4%BB%B6-Lyricify%F0%9F%8E%B6%E2%9C%A8"><span class="toc-number">6.</span> <span class="toc-text">歌词软件-Lyricify🎶✨</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="toc-number">7.</span> <span class="toc-text">常见问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%9C%A8%E5%93%AA%E9%87%8C%EF%BC%9F"><span class="toc-number">7.1.</span> <span class="toc-text">配置文件在哪里？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%BE%A8%E6%9E%90"><span class="toc-number">7.2.</span> <span class="toc-text">命令辨析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0"><span class="toc-number">8.</span> <span class="toc-text">参考文章</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        解锁个性化体验：Spicetify 改造你的 Spotify 客户端
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">John Doe</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2025-07-18T13:02:00.000Z" class="dt-published" itemprop="datePublished">2025-07-18</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/">技术教程</a> › <a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/Lyricify-%E6%AD%8C%E8%AF%8D/" rel="tag">Lyricify 歌词</a>, <a class="p-category" href="/tags/Spicetify/" rel="tag">Spicetify</a>, <a class="p-category" href="/tags/Spotify-%E7%BE%8E%E5%8C%96/" rel="tag">Spotify 美化</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <blockquote>
 <p><em>舍不得如此灿烂的某人，照亮了一起走过的日子；忘不了有笑有泪的共同经历，你我之间的情谊是那么真挚；缘起缘灭，人海沉浮，相忘于江湖。几分怅惘，几许祝福，几丝江湖气。                                            ——@知乎网友</em></p>
 </blockquote>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>🌟 <strong>Spotify：音乐爱好者的天堂</strong><br>Spotify 是全球领先的正版流媒体音乐服务商之一，汇聚数亿用户，覆盖全球。其音乐库包含超过 ，涵盖 Sony Music、EMI、Warner Music Group 和 Universal Music Group 等四大唱片公司及众多独立厂牌的作品。</p>
@@ -477,117 +548,143 @@
 </ul>
 <h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p>[^2]: <a target="_blank" rel="noopener" href="https://spicetify.app/docs/getting-started">Getting Started,Spicetify</a></p>
 
-    </div>
-    <footer class="article-footer">
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Lyricify-%E6%AD%8C%E8%AF%8D/" rel="tag">Lyricify 歌词</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spicetify/" rel="tag">Spicetify</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spotify-%E7%BE%8E%E5%8C%96/" rel="tag">Spotify 美化</a></li></ul>
-
-    </footer>
   </div>
-  
-  
-    
-<nav class="article-nav pt-4 mt-3" id="article-nav">
-  
-    <a href="/2025/07/24/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Hello World
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2025/07/15/OpenWrt%20%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%EF%BC%9A%E5%85%A8%E9%9D%A2%E6%8E%8C%E6%8F%A1%20OpenWrt%20%E4%BD%BF%E7%94%A8%E4%B8%8E%E9%85%8D%E7%BD%AE/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">OpenWrt 从入门到精通：全面掌握 OpenWrt 使用与配置</div>
-    </a>
-  
-</nav>
-
-
-  
 </article>
-</div>
-    </section>
-    <footer class="footer pt-5 mt-5">
-  <div class="container">
-    <div class="py-3">
-      <div class="row justify-content-between">
-        <div class="col-6">
-          <img class="filter-gray mb-3" height="40" src="/images/brand.svg" alt="Hexo" role="img">
-          <p class="mb-4"></p>
-          <ul class="list-inline">
-            
-          </ul>
-        </div>
-        <div class="col-4">
-          <h5>友情链接</h5>
-          <ul class="list-inline">
-            
-          </ul>
-        </div>
-      </div>
-    </div>
-    <hr class="hr" style="opacity: .25;">
-    <div class="pt-3 pb-5">
-      <ul class="list-inline mb-0 text-center">
-        <li class="list-inline-item">&copy; 2025 Hexo</li>
+
+
+
         
-        <li class="list-inline-item">Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
-        <li class="list-inline-item">Designer <a href="https://acorn.imaging.xin/" target="_blank">John Doe</a></li>
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li>
+        
       </ul>
     </div>
-  </div>
-</footer>
-  </main>
-  <div id="mobile-nav-dimmer"></div>
-<div id="mobile-nav">
-	<div id="mobile-nav-inner">
-		<ul class="mobile-nav">
-  
+
     
-  <li class="nav-item ">
-    <a class="nav-item-link" href="/">首页</a>
-  </li>
-  
     
-  <li class="nav-item ">
-    <a class="nav-item-link" href="/gallery">画廊</a>
-  </li>
-  
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spicetify-%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">2.</span> <span class="toc-text">Spicetify 是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spicetify-%E5%AE%89%E8%A3%85"><span class="toc-number">3.</span> <span class="toc-text">Spicetify 安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">3.1.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows-%E5%B9%B3%E5%8F%B0"><span class="toc-number">3.2.</span> <span class="toc-text">Windows 平台</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux-%E5%92%8C-MacOS"><span class="toc-number">3.3.</span> <span class="toc-text">Linux 和 MacOS</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Shell%EF%BC%88%E9%A2%84%E6%9E%84%E5%BB%BA%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6%EF%BC%89"><span class="toc-number">3.3.1.</span> <span class="toc-text">Shell（预构建二进制文件）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">4.</span> <span class="toc-text">使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#spicetify-%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4"><span class="toc-number">4.1.</span> <span class="toc-text">spicetify 常见命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%B8%E8%BD%BD"><span class="toc-number">4.2.</span> <span class="toc-text">插件安装与卸载</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%A9%E5%B1%95%E5%AD%98%E5%82%A8%E8%B7%AF%E5%BE%84"><span class="toc-number">4.2.1.</span> <span class="toc-text">扩展存储路径</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%B8%E8%BD%BD-1"><span class="toc-number">4.2.2.</span> <span class="toc-text">插件安装与卸载</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E6%9B%B4%E6%96%B0"><span class="toc-number">4.3.</span> <span class="toc-text">软件更新</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A8%E8%8D%90%E6%8F%92%E4%BB%B6"><span class="toc-number">4.4.</span> <span class="toc-text">推荐插件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Full-App-Display%EF%BC%88%E5%B8%82%E5%9C%BA%EF%BC%89"><span class="toc-number">4.4.1.</span> <span class="toc-text">Full App Display（市场）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Full-Screen%EF%BC%88%E5%B8%82%E5%9C%BA%EF%BC%89"><span class="toc-number">4.4.2.</span> <span class="toc-text">Full Screen（市场）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Lyrics-Plus"><span class="toc-number">4.4.3.</span> <span class="toc-text">Lyrics Plus</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Adblock%EF%BC%88%E5%B8%82%E5%9C%BA%EF%BC%89"><span class="toc-number">4.4.4.</span> <span class="toc-text">Adblock（市场）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#New-Releases"><span class="toc-number">4.4.5.</span> <span class="toc-text">New Releases</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spicetify-%E5%8D%B8%E8%BD%BD"><span class="toc-number">4.5.</span> <span class="toc-text">Spicetify 卸载</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Windows"><span class="toc-number">4.5.1.</span> <span class="toc-text">Windows</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Linux-and-MacOS"><span class="toc-number">4.5.2.</span> <span class="toc-text">Linux and MacOS</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98"><span class="toc-number">5.</span> <span class="toc-text">更换主题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E5%AE%9E%E7%8E%B0"><span class="toc-number">5.1.</span> <span class="toc-text">命令实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%8B%E5%8A%A8%E5%AE%9E%E7%8E%B0"><span class="toc-number">5.2.</span> <span class="toc-text">手动实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E4%B8%BB%E9%A2%98"><span class="toc-number">5.3.</span> <span class="toc-text">切换主题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%88%E7%AB%AF%E7%9B%B4%E6%8E%A5%E5%88%87%E6%8D%A2"><span class="toc-number">5.3.1.</span> <span class="toc-text">终端直接切换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">5.3.2.</span> <span class="toc-text">修改配置文件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%8C%E8%AF%8D%E8%BD%AF%E4%BB%B6-Lyricify%F0%9F%8E%B6%E2%9C%A8"><span class="toc-number">6.</span> <span class="toc-text">歌词软件-Lyricify🎶✨</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="toc-number">7.</span> <span class="toc-text">常见问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%9C%A8%E5%93%AA%E9%87%8C%EF%BC%9F"><span class="toc-number">7.1.</span> <span class="toc-text">配置文件在哪里？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%BE%A8%E6%9E%90"><span class="toc-number">7.2.</span> <span class="toc-text">命令辨析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0"><span class="toc-number">8.</span> <span class="toc-text">参考文章</span></a></li></ol>
+      </div>
     
-  <li class="nav-item ">
-    <a class="nav-item-link" href="/stories">案例</a>
-  </li>
-  
-    
-  <li class="nav-item ">
-    <a class="nav-item-link" href="/archives">新闻</a>
-  </li>
-  
-    
-  <li class="nav-item ">
-    <a class="nav-item-link" href="/about">关于</a>
-  </li>
-  
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2025/07/18/%E8%A7%A3%E9%94%81%E4%B8%AA%E6%80%A7%E5%8C%96%E4%BD%93%E9%AA%8C%EF%BC%9ASpicetify%20%E6%94%B9%E9%80%A0%E4%BD%A0%E7%9A%84%20Spotify%20%E5%AE%A2%E6%88%B7%E7%AB%AF/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2025/07/18/%E8%A7%A3%E9%94%81%E4%B8%AA%E6%80%A7%E5%8C%96%E4%BD%93%E9%AA%8C%EF%BC%9ASpicetify%20%E6%94%B9%E9%80%A0%E4%BD%A0%E7%9A%84%20Spotify%20%E5%AE%A2%E6%88%B7%E7%AB%AF/&text=解锁个性化体验：Spicetify 改造你的 Spotify 客户端"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2025/07/18/%E8%A7%A3%E9%94%81%E4%B8%AA%E6%80%A7%E5%8C%96%E4%BD%93%E9%AA%8C%EF%BC%9ASpicetify%20%E6%94%B9%E9%80%A0%E4%BD%A0%E7%9A%84%20Spotify%20%E5%AE%A2%E6%88%B7%E7%AB%AF/&title=解锁个性化体验：Spicetify 改造你的 Spotify 客户端"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2025/07/18/%E8%A7%A3%E9%94%81%E4%B8%AA%E6%80%A7%E5%8C%96%E4%BD%93%E9%AA%8C%EF%BC%9ASpicetify%20%E6%94%B9%E9%80%A0%E4%BD%A0%E7%9A%84%20Spotify%20%E5%AE%A2%E6%88%B7%E7%AB%AF/&is_video=false&description=解锁个性化体验：Spicetify 改造你的 Spotify 客户端"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=解锁个性化体验：Spicetify 改造你的 Spotify 客户端&body=Check out this article: http://example.com/2025/07/18/%E8%A7%A3%E9%94%81%E4%B8%AA%E6%80%A7%E5%8C%96%E4%BD%93%E9%AA%8C%EF%BC%9ASpicetify%20%E6%94%B9%E9%80%A0%E4%BD%A0%E7%9A%84%20Spotify%20%E5%AE%A2%E6%88%B7%E7%AB%AF/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2025/07/18/%E8%A7%A3%E9%94%81%E4%B8%AA%E6%80%A7%E5%8C%96%E4%BD%93%E9%AA%8C%EF%BC%9ASpicetify%20%E6%94%B9%E9%80%A0%E4%BD%A0%E7%9A%84%20Spotify%20%E5%AE%A2%E6%88%B7%E7%AB%AF/&title=解锁个性化体验：Spicetify 改造你的 Spotify 客户端"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2025/07/18/%E8%A7%A3%E9%94%81%E4%B8%AA%E6%80%A7%E5%8C%96%E4%BD%93%E9%AA%8C%EF%BC%9ASpicetify%20%E6%94%B9%E9%80%A0%E4%BD%A0%E7%9A%84%20Spotify%20%E5%AE%A2%E6%88%B7%E7%AB%AF/&title=解锁个性化体验：Spicetify 改造你的 Spotify 客户端"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2025/07/18/%E8%A7%A3%E9%94%81%E4%B8%AA%E6%80%A7%E5%8C%96%E4%BD%93%E9%AA%8C%EF%BC%9ASpicetify%20%E6%94%B9%E9%80%A0%E4%BD%A0%E7%9A%84%20Spotify%20%E5%AE%A2%E6%88%B7%E7%AB%AF/&title=解锁个性化体验：Spicetify 改造你的 Spotify 客户端"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2025/07/18/%E8%A7%A3%E9%94%81%E4%B8%AA%E6%80%A7%E5%8C%96%E4%BD%93%E9%AA%8C%EF%BC%9ASpicetify%20%E6%94%B9%E9%80%A0%E4%BD%A0%E7%9A%84%20Spotify%20%E5%AE%A2%E6%88%B7%E7%AB%AF/&title=解锁个性化体验：Spicetify 改造你的 Spotify 客户端"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2025/07/18/%E8%A7%A3%E9%94%81%E4%B8%AA%E6%80%A7%E5%8C%96%E4%BD%93%E9%AA%8C%EF%BC%9ASpicetify%20%E6%94%B9%E9%80%A0%E4%BD%A0%E7%9A%84%20Spotify%20%E5%AE%A2%E6%88%B7%E7%AB%AF/&name=解锁个性化体验：Spicetify 改造你的 Spotify 客户端&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2025/07/18/%E8%A7%A3%E9%94%81%E4%B8%AA%E6%80%A7%E5%8C%96%E4%BD%93%E9%AA%8C%EF%BC%9ASpicetify%20%E6%94%B9%E9%80%A0%E4%BD%A0%E7%9A%84%20Spotify%20%E5%AE%A2%E6%88%B7%E7%AB%AF/&t=解锁个性化体验：Spicetify 改造你的 Spotify 客户端"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
-		
-	</div>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
 </div>
 
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2025
+    John Doe
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
   
-<script src="//cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
 
 
+<script src="/js/main.js"></script>
 
+<!-- search -->
 
-<script src="/js/mobile-nav.js"></script>
+<!-- Baidu Analytics -->
 
+<!-- Cloudflare Analytics -->
 
-<script src="/js/script.js"></script>
+<!-- Disqus Comments -->
 
+<!-- utterances Comments -->
 
 </body>
 </html>
