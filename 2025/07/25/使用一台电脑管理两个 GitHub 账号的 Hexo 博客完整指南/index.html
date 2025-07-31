@@ -1,35 +1,367 @@
-extends includes/layout.pug
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>使用一台电脑管理两个 GitHub 账号的 Hexo 博客完整指南 | Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="使用一台电脑管理两个 GitHub 账号的 Hexo 博客完整指南1. 事前准备 域名（非必须）：你可以使用免费的 GitHub.io 分配的域名。 GitHub（必须）： 注册两个 GitHub 账号： 第一个账号：用户名 user1，邮箱 account_one@example.com。 第二个账号：用户名 user2，邮箱 account_two@example.com。   假设你已经注册">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用一台电脑管理两个 GitHub 账号的 Hexo 博客完整指南">
+<meta property="og:url" content="http://example.com/2025/07/25/%E4%BD%BF%E7%94%A8%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E7%AE%A1%E7%90%86%E4%B8%A4%E4%B8%AA%20GitHub%20%E8%B4%A6%E5%8F%B7%E7%9A%84%20Hexo%20%E5%8D%9A%E5%AE%A2%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="使用一台电脑管理两个 GitHub 账号的 Hexo 博客完整指南1. 事前准备 域名（非必须）：你可以使用免费的 GitHub.io 分配的域名。 GitHub（必须）： 注册两个 GitHub 账号： 第一个账号：用户名 user1，邮箱 account_one@example.com。 第二个账号：用户名 user2，邮箱 account_two@example.com。   假设你已经注册">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://halo-bk.oss-cn-beijing.aliyuncs.com/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/%E4%BD%BF%E7%94%A8%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E7%AE%A1%E7%90%86%E4%B8%A4%E4%B8%AA%20GitHub%20%E8%B4%A6%E5%8F%B7%E7%9A%84%20Hexo%20%E5%8D%9A%E5%AE%A2%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97.webp">
+<meta property="article:published_time" content="2025-07-24T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-07-25T15:44:39.173Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="GitHub">
+<meta property="article:tag" content="SSH">
+<meta property="article:tag" content="多账号">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://halo-bk.oss-cn-beijing.aliyuncs.com/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/%E4%BD%BF%E7%94%A8%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E7%AE%A1%E7%90%86%E4%B8%A4%E4%B8%AA%20GitHub%20%E8%B4%A6%E5%8F%B7%E7%9A%84%20Hexo%20%E5%8D%9A%E5%AE%A2%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97.webp"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "使用一台电脑管理两个 GitHub 账号的 Hexo 博客完整指南",
+  "url": "http://example.com/2025/07/25/%E4%BD%BF%E7%94%A8%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E7%AE%A1%E7%90%86%E4%B8%A4%E4%B8%AA%20GitHub%20%E8%B4%A6%E5%8F%B7%E7%9A%84%20Hexo%20%E5%8D%9A%E5%AE%A2%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/",
+  "image": "https://halo-bk.oss-cn-beijing.aliyuncs.com/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/%E4%BD%BF%E7%94%A8%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E7%AE%A1%E7%90%86%E4%B8%A4%E4%B8%AA%20GitHub%20%E8%B4%A6%E5%8F%B7%E7%9A%84%20Hexo%20%E5%8D%9A%E5%AE%A2%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97.webp",
+  "datePublished": "2025-07-24T16:00:00.000Z",
+  "dateModified": "2025-07-25T15:44:39.173Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "John Doe",
+      "url": "http://example.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2025/07/25/%E4%BD%BF%E7%94%A8%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E7%AE%A1%E7%90%86%E4%B8%A4%E4%B8%AA%20GitHub%20%E8%B4%A6%E5%8F%B7%E7%9A%84%20Hexo%20%E5%8D%9A%E5%AE%A2%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
 
-block content
-  #post
-    if top_img === false
-      include includes/header/post-info.pug
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
 
-    article#article-container.container.post-content
-      if theme.noticeOutdate.enable && page.noticeOutdate !== false
-        include includes/post/outdate-notice.pug
-      else
-        !=page.content
-    include includes/post/post-copyright.pug
-    .tag_share
-      if (page.tags.length > 0 && theme.post_meta.post.tags)
-        .post-meta__tag-list
-          each item, index in page.tags.data
-            a(href=url_for(item.path)).post-meta__tags #[=item.name]
-      include includes/third-party/share/index.pug
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
 
-    if theme.reward.enable && theme.reward.QR_code
-      !=partial('includes/post/reward', {}, {cache: true})
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '使用一台电脑管理两个 GitHub 账号的 Hexo 博客完整指南',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://halo-bk.oss-cn-beijing.aliyuncs.com/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/%E4%BD%BF%E7%94%A8%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E7%AE%A1%E7%90%86%E4%B8%A4%E4%B8%AA%20GitHub%20%E8%B4%A6%E5%8F%B7%E7%9A%84%20Hexo%20%E5%8D%9A%E5%AE%A2%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97.webp);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Hexo</span></a><a class="nav-page-title" href="/"><span class="site-name">使用一台电脑管理两个 GitHub 账号的 Hexo 博客完整指南</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  Back to Home</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">使用一台电脑管理两个 GitHub 账号的 Hexo 博客完整指南</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-07-24T16:00:00.000Z" title="Created 2025-07-25 00:00:00">2025-07-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-07-25T15:44:39.173Z" title="Updated 2025-07-25 23:44:39">2025-07-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/">博客相关</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/">技术教程</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="使用一台电脑管理两个-GitHub-账号的-Hexo-博客完整指南"><a href="#使用一台电脑管理两个-GitHub-账号的-Hexo-博客完整指南" class="headerlink" title="使用一台电脑管理两个 GitHub 账号的 Hexo 博客完整指南"></a>使用一台电脑管理两个 GitHub 账号的 Hexo 博客完整指南</h1><h2 id="1-事前准备"><a href="#1-事前准备" class="headerlink" title="1. 事前准备"></a>1. 事前准备</h2><ol>
+<li><strong>域名</strong>（<strong>非必须</strong>）：你可以使用免费的 <code>GitHub.io</code> 分配的域名。</li>
+<li><strong>GitHub</strong>（<strong>必须</strong>）：<ul>
+<li>注册两个 GitHub 账号：<ul>
+<li>第一个账号：用户名 <code>user1</code>，邮箱 <code>account_one@example.com</code>。</li>
+<li>第二个账号：用户名 <code>user2</code>，邮箱 <code>account_two@example.com</code>。</li>
+</ul>
+</li>
+<li>假设你已经注册并可以登录这两个账号。</li>
+</ul>
+</li>
+<li><strong>Cloudflare</strong>（<strong>非必须</strong>）：可用于加速博客访问。</li>
+<li>事先安装好了 <strong><a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">Node</a></strong>、<strong><a target="_blank" rel="noopener" href="https://git-scm.com/downloads">Git</a></strong>、**<a target="_blank" rel="noopener" href="https://www.bing.com/search?q=vscode&qs=n&form=QBRE&sp=-1&lq=0&pq=vs%27co%27de&sc=12-8&sk=&cvid=E96E712CFE774E6F9256B5CC6A37CEC8">VScode</a>**等软件，可以参考<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=GtYcFZ55GJI&t=1s&ab_channel=CM%E5%96%82%E9%A5%AD%E5%B9%B2%E8%B4%A7%E6%BB%A1%E6%BB%A1">【Hexo博客系列】No.1 搭建Hexo博客，快速简洁高效，零成本搭建个人博客：Hexo + GitHub Pages + Cloudflare Pages 完整指南 #blog - YouTube</a></li>
+</ol>
+<hr>
+<h2 id="2-配置-Git-和连接第一个-GitHub-账号-user1-account-one-example-com"><a href="#2-配置-Git-和连接第一个-GitHub-账号-user1-account-one-example-com" class="headerlink" title="2. 配置 Git 和连接第一个 GitHub 账号 (user1 - account_one@example.com)"></a>2. 配置 Git 和连接第一个 GitHub 账号 (<code>user1</code> - <code>account_one@example.com</code>)</h2><p>我们将首先配置与第一个 GitHub 账号相关的设置。</p>
+<h3 id="2-1-配置第一个账号的用户名和邮箱（全局）"><a href="#2-1-配置第一个账号的用户名和邮箱（全局）" class="headerlink" title="2.1 配置第一个账号的用户名和邮箱（全局）"></a>2.1 配置第一个账号的用户名和邮箱（全局）</h3><p>打开 <code>Git Bash</code>，执行以下命令设置 Git 的全局用户信息（关联第一个 GitHub 账号），通过 <code>git config -l</code> 检查是否配置成功。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;user1&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;account_one@example.com&quot;</span></span><br></pre></td></tr></table></figure>
 
-    //- ad
-    if theme.ad && theme.ad.post
-      .ads-wrap!=theme.ad.post
+<ul>
+<li><strong>注意</strong>：这里的 <code>user.name</code> 设置为你的第一个 GitHub 用户名（<code>user1</code>）。<code>user.email</code> 必须是你第一个 GitHub 账号设置中的 Primary email address。</li>
+</ul>
+<h3 id="2-2-为第一个账号生成并配置-SSH-密钥"><a href="#2-2-为第一个账号生成并配置-SSH-密钥" class="headerlink" title="2.2 为第一个账号生成并配置 SSH 密钥"></a>2.2 为第一个账号生成并配置 SSH 密钥</h3><ol>
+<li><p>在 <code>Git Bash</code>中执行以下命令生成 SSH 密钥对，关联第一个邮箱：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;account_one@example.com&quot;</span></span><br></pre></td></tr></table></figure>
 
-    if theme.post_pagination
-      include includes/pagination.pug
-    if theme.related_post && theme.related_post.enable
-      != related_posts(page,site.posts)
+<ul>
+<li>提示 <code>Enter file in which to save the key</code> 时，<strong>直接回车</strong>，使用默认文件名 <code>id_rsa</code> 和 <code>id_rsa.pub</code>。</li>
+<li>提示 <code>Enter passphrase</code> 时，也<strong>直接回车</strong>（不设置密码），方便使用。</li>
+</ul>
+</li>
+<li><p>找到生成的密钥文件（通常在 <code>C:\Users\你的Windows用户名\.ssh\</code> 目录下），用记事本打开 <code>id_rsa.pub</code> 文件，复制里面的所有内容。</p>
+<ul>
+<li><code>id_rsa</code> (私钥 - <strong>不要泄露</strong>)</li>
+<li><code>id_rsa.pub</code> (公钥 - 需要添加到 GitHub)</li>
+</ul>
+</li>
+<li><p>将 SSH KEY 配置到</p>
+<p> GitHub 登录你的第一个 GitHub 账号 (<code>user1</code>，邮箱 <code>account_one@example.com</code>)，点击右上角头像 选择 <strong>settings</strong>，进入设置页后选择 <strong>SSH and GPG keys</strong>，点击 <strong>New SSH key</strong>，名字随便起，<strong>Key type</strong> 选择 <code>Authentication Key</code>，公钥填到 <code>Key</code> 那一栏，点击 <strong>Add SSH key</strong>。</p>
+</li>
+</ol>
+<p><img src="https://blog-pictures-bucket.oss-cn-beijing.aliyuncs.com/typora-tu-chuang/2025/07/25/72b57b3c67d7c225bef118ae0ccbb441-79e418fe.webp" alt="Snipaste_2025-07-25_22-22-26"></p>
+<h3 id="2-3-测试第一个账号的-SSH-连接"><a href="#2-3-测试第一个账号的-SSH-连接" class="headerlink" title="2.3 测试第一个账号的 SSH 连接"></a>2.3 测试第一个账号的 SSH 连接</h3><p>在 <code>Git Bash</code> 中输入以下命令测试连接：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 
-    if page.comments !== false && theme.comments.use
-      - var commentsJsLoad = true
-      !=partial('includes/third-party/comments/index', {}, {cache: true})
+<ul>
+<li>如果是第一次连接，会提示 <code>Are you sure you want to continue connecting (yes/no/[fingerprint])?</code>，输入 <code>yes</code> 并回车。</li>
+<li>如果看到类似 <code>Hi user1! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code> 的信息，说明连接成功。</li>
+</ul>
+<h3 id="2-4-为第一个账号创建-GitHub-Pages-仓库"><a href="#2-4-为第一个账号创建-GitHub-Pages-仓库" class="headerlink" title="2.4 为第一个账号创建 GitHub Pages 仓库"></a>2.4 为第一个账号创建 GitHub Pages 仓库</h3><ol>
+<li>登录你的第一个 GitHub 账号 (<code>user1</code>)，点击右上角的 <code>+</code> 按钮，选择 <strong>New repository</strong> ，创建一个 <code>&lt;用户名&gt;.github.io</code> 的仓库。例如，<strong>Repository name</strong> 必须是：<code>user1.github.io</code> 。</li>
+</ol>
+<p><img src="https://blog-pictures-bucket.oss-cn-beijing.aliyuncs.com/typora-tu-chuang/2024%2F12%2F15%2Fe9b770ca443bdceefc9ac92aa00fe10d-478b90f1.webp" alt="创建GitHub.io仓库"></p>
+<ol start="2">
+<li><p><strong>Public</strong> 选择 <code>Public</code> 方便第一次部署检查问题。</p>
+</li>
+<li><p>点击 <strong>Create repository</strong> 进行创建即可。</p>
+</li>
+</ol>
+<h2 id="3-初始化第一个-Hexo-博客-blog-demo"><a href="#3-初始化第一个-Hexo-博客-blog-demo" class="headerlink" title="3. 初始化第一个 Hexo 博客 (blog-demo)"></a>3. 初始化第一个 Hexo 博客 (<code>blog-demo</code>)</h2><h3 id="3-1-创建项目文件夹并安装-Hexo"><a href="#3-1-创建项目文件夹并安装-Hexo" class="headerlink" title="3.1 创建项目文件夹并安装 Hexo"></a>3.1 创建项目文件夹并安装 Hexo</h3><ol>
+<li><p>创建一个文件夹来保存博客源码（例如：<code>D:/Hexo-Blog/blog-demo</code>）；</p>
+</li>
+<li><p>在 <code>blog-demo</code> 文件夹内右键鼠标，选择 <code>Open Git Bash here</code>，在 <code>Git BASH</code> 输入如下命令安装 Hexo：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli &amp;&amp; hexo -v</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装完后输入 <code>hexo -v</code> 验证是否安装成功。</p>
+</li>
+</ol>
+<img src="https://blog-pictures-bucket.oss-cn-beijing.aliyuncs.com/typora-tu-chuang/2024%2F12%2F15%2Fe63d3e27574e58cb7c8e12e94fbc441e-2b8c4fdd.webp" alt="Hexo版本" style="zoom: 50%;" />
+
+<h3 id="3-2-初始化-Hexo-项目"><a href="#3-2-初始化-Hexo-项目" class="headerlink" title="3.2 初始化 Hexo 项目"></a>3.2 初始化 Hexo 项目</h3><p>在 <code>blog-demo</code> 目录下执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo init .</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>.</code> 表示在当前目录初始化。</li>
+<li>这会安装 Hexo 所需的依赖。</li>
+</ul>
+<p>初始化项目后，<code>blog-demo</code> 有如下结构：</p>
+<blockquote>
+<ul>
+<li><strong>node_modules</strong>：依赖包</li>
+<li><strong>scaffolds</strong>：生成文章的一些模板</li>
+<li><strong>source</strong>：用来存放你的文章</li>
+<li><strong>themes</strong>：主题</li>
+<li><strong>.npmignore</strong>：发布时忽略的文件（可忽略）</li>
+<li><strong>_config.landscape.yml</strong>：主题的配置文件</li>
+<li><strong>config.yml</strong>：博客的配置文件</li>
+<li><strong>package.json</strong>：项目名称、描述、版本、运行和开发等信息</li>
+</ul>
+</blockquote>
+<h3 id="3-3-启动并预览本地博客"><a href="#3-3-启动并预览本地博客" class="headerlink" title="3.3 启动并预览本地博客"></a>3.3 启动并预览本地博客</h3><p>在 <code>blog-demo</code> 目录下执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>hexo clean</code> 清理缓存。</li>
+<li><code>hexo s</code> (或 <code>hexo server</code>) 启动本地服务器。</li>
+</ul>
+<p>打开浏览器，输入地址：<code>http://localhost:4000/</code> ，看到默认的 Hexo 页面，说明你的博客已经构建成功了。</p>
+<p><img src="https://blog-pictures-bucket.oss-cn-beijing.aliyuncs.com/typora-tu-chuang/2024%2F12%2F15%2Fceb33145ed97e0fb1675082f64b6e55d-01b91291.webp" alt="界面"></p>
+<h3 id="3-4-配置第一个博客的部署设置"><a href="#3-4-配置第一个博客的部署设置" class="headerlink" title="3.4 配置第一个博客的部署设置"></a>3.4 配置第一个博客的部署设置</h3><ol>
+<li><p>安装 Hexo 部署插件-<strong>hexo-deployer-git</strong></p>
+<p>在博客源码文件夹右键打开 <code>Git Bash</code>，输入下面命令安装 Hexo 的 Git 部署插件；</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用 VSCode 或其他文本编辑器打开 <code>blog-demo</code> 目录下的 <code>_config.yml</code> 文件（这是 Hexo 的主配置文件）。</p>
+<p>找到文件末尾的 deploy 部分，修改为：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: git@github.com:user1/user1.github.io.git</span><br><span class="line">  branch: main <span class="comment"># 或 gh-pages，取决于你的仓库设置</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>将 <code>user1/user1.github.io.git</code> 替换为你第一个账号的实际仓库地址。</li>
+<li>分支要改为 <code>main</code> 代表主分支（注意缩进）。</li>
+</ul>
+</li>
+<li><p>回到 <code>Git Bash</code> (在 <code>blog-demo</code> 目录下)，执行部署命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>或使用缩写（在 VSCode 终端中）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo cl &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意</strong>：deploy时可能要你输入 username 和 password（尽管使用了 SSH，但某些情况下仍可能提示）。</p>
+</li>
+<li><p>如果出现 <strong>Deploy done</strong>，则说明部署成功了。稍等两分钟，打开浏览器访问：<code>https://user1.github.io</code> ，这时候我们就可以看到博客内容了。</p>
+</li>
+</ol>
+<h2 id="4-配置-Git-和连接第二个-GitHub-账号-user2-account-two-example-com"><a href="#4-配置-Git-和连接第二个-GitHub-账号-user2-account-two-example-com" class="headerlink" title="4. 配置 Git 和连接第二个 GitHub 账号 (user2 - account_two@example.com)"></a>4. 配置 Git 和连接第二个 GitHub 账号 (<code>user2</code> - <code>account_two@example.com</code>)</h2><p>现在我们为第二个账号设置独立的环境。</p>
+<h3 id="4-1-为第二个账号生成新的-SSH-密钥对"><a href="#4-1-为第二个账号生成新的-SSH-密钥对" class="headerlink" title="4.1 为第二个账号生成新的 SSH 密钥对"></a>4.1 为第二个账号生成新的 SSH 密钥对</h3><ol>
+<li><p>打开 <code>Git Bash</code>。</p>
+</li>
+<li><p>为第二个账号 (<code>account_two@example.com</code>) 生成新的 SSH 密钥对，指定不同的文件名以避免冲突：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;account_two@example.com&quot;</span> -f ~/.ssh/id_rsa_user2</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>-f ~/.ssh/id_rsa_user2</code>：指定密钥文件名为 <code>id_rsa_user2</code> 和 <code>id_rsa_user2.pub</code>。</li>
+</ul>
+<ul>
+<li>提示 <code>Enter passphrase</code> 时，<strong>直接回车</strong>（不设置密码）。</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://blog-pictures-bucket.oss-cn-beijing.aliyuncs.com/typora-tu-chuang/2025/07/25/89c97d316e9938b86f6bedc13e55292a-d0d7bd08.webp" alt="Snipaste_2025-07-25_22-51-24"></p>
+<h3 id="4-2-将第二个-SSH-公钥添加到第二个-GitHub-账号"><a href="#4-2-将第二个-SSH-公钥添加到第二个-GitHub-账号" class="headerlink" title="4.2 将第二个 SSH 公钥添加到第二个 GitHub 账号"></a>4.2 将第二个 SSH 公钥添加到第二个 GitHub 账号</h3><p>用记事本打开 <code>~/.ssh/id_rsa_user2.pub</code> 文件，复制所有内容，登录你的第二个 GitHub 账号 ，进入 <strong>Settings</strong> -&gt; <strong>SSH and GPG keys</strong> -&gt; 点击 <strong>New SSH key</strong>，名字随便起，<strong>Key type</strong> 选择 <code>Authentication Key</code>，公钥填到 <code>Key</code> 那一栏，点击 <strong>Add SSH key</strong>。</p>
+<h3 id="4-3-配置-SSH-客户端以区分不同账号"><a href="#4-3-配置-SSH-客户端以区分不同账号" class="headerlink" title="4.3 配置 SSH 客户端以区分不同账号"></a>4.3 配置 SSH 客户端以区分不同账号</h3><p>为了让 Git 知道连接不同的 GitHub 账号时使用哪个密钥，需要配置 SSH 客户端。</p>
+<p>在 <code>C:\Users\你的Windows用户名\.ssh\</code> 目录下，检查是否存在 <code>config</code> 文件。如果没有，使用文本编辑器新建一个，文件名为 <code>config</code>（没有扩展名）。</p>
+<p>编辑 <code>config</code> 文件，添加以下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># Default GitHub account (user1 - account_one@example.com)</span><br><span class="line">Host github.com</span><br><span class="line">  HostName github.com</span><br><span class="line">  User git</span><br><span class="line">  IdentityFile ~/.ssh/id_rsa</span><br><span class="line">  IdentitiesOnly yes</span><br><span class="line"></span><br><span class="line"># Second GitHub account (user2 - account_two@example.com)</span><br><span class="line">Host github-user2 # 自定义别名</span><br><span class="line">  HostName github.com</span><br><span class="line">  User git</span><br><span class="line">  IdentityFile ~/.ssh/id_rsa_user2</span><br><span class="line">  IdentitiesOnly yes</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>Host github.com</code>：这是默认配置，关联第一个账号的密钥 (<code>id_rsa</code>)。</li>
+<li><code>Host github-user2</code>：这是为第二个账号创建的<strong>自定义别名</strong>。后面部署第二个博客时会用到这个别名。</li>
+<li><code>IdentityFile</code>：分别指向两个不同的私钥文件。</li>
+<li><code>IdentitiesOnly yes</code>：确保只使用指定的密钥。</li>
+</ul>
+<h3 id="4-4-为第二个账号创建-GitHub-Pages-仓库"><a href="#4-4-为第二个账号创建-GitHub-Pages-仓库" class="headerlink" title="4.4 为第二个账号创建 GitHub Pages 仓库"></a>4.4 为第二个账号创建 GitHub Pages 仓库</h3><ol>
+<li><p>登录你的第二个 GitHub 账号，点击右上角的 <code>+</code> 按钮，选择 <strong>New repository</strong> ，创建一个 <code>&lt;用户名&gt;.github.io</code> 的仓库。</p>
+<p><strong>Repository name</strong> 必须是：<code>user2.github.io</code> (注意：前缀必须为用户名，此为预览博客需要，后期可修改仓库名)</p>
+</li>
+<li><p><strong>Public</strong> 选择 <code>Public</code> 方便第一次部署检查问题，点击 <strong>Create repository</strong> 进行创建即可。</p>
+</li>
+</ol>
+<h2 id="5-初始化第二个-Hexo-博客-blog-main"><a href="#5-初始化第二个-Hexo-博客-blog-main" class="headerlink" title="5. 初始化第二个 Hexo 博客 (blog-main)"></a>5. 初始化第二个 Hexo 博客 (<code>blog-main</code>)</h2><h3 id="5-1-创建项目文件夹并安装-Hexo"><a href="#5-1-创建项目文件夹并安装-Hexo" class="headerlink" title="5.1 创建项目文件夹并安装 Hexo"></a>5.1 创建项目文件夹并安装 Hexo</h3><ol>
+<li><p>在你的电脑上创建一个<strong>新</strong>的文件夹来存放第二个博客的源码，例如：<code>D:\Hexo-Blog\blog-main</code>。</p>
+</li>
+<li><p>在 <code>blog-main</code> 文件夹内，按住 <code>Shift</code> 键并右键，选择 <strong>在此处打开 PowerShell</strong> 或 <strong>Open Git Bash here</strong>。</p>
+</li>
+<li><p><strong>（重要）为这个本地仓库设置特定的用户信息</strong>（覆盖全局配置）,这确保了在此目录下的 Git 提交（包括 Hexo 的部署）使用第二个账号的信息。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git init <span class="comment"># 如果目录不是 Git 仓库，需要先初始化</span></span><br><span class="line">git config user.name <span class="string">&quot;user2&quot;</span></span><br><span class="line">git config user.email <span class="string">&quot;account_two@example.com&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>初始化 Hexo 项目：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo init .</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="5-2-启动并预览本地博客"><a href="#5-2-启动并预览本地博客" class="headerlink" title="5.2 启动并预览本地博客"></a>5.2 启动并预览本地博客</h3><p>在 <code>blog-main</code> 目录下执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
+
+<p>打开浏览器访问 <code>http://localhost:4000/</code>，预览第二个博客。</p>
+<h3 id="5-3-配置第二个博客的部署设置"><a href="#5-3-配置第二个博客的部署设置" class="headerlink" title="5.3 配置第二个博客的部署设置"></a>5.3 配置第二个博客的部署设置</h3><ol>
+<li><p>确保在 <code>blog-main</code> 目录下，安装 Hexo 部署插件（如果尚未安装）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用 VSCode 或其他文本编辑器打开 <code>blog-main</code> 目录下的 <code>_config.yml</code> 文件。找到文件末尾的 <code>deploy</code> 部分，<strong>关键在于 <code>repository</code> 的主机名部分要使用你在 <code>config</code> 文件中定义的别名 <code>github-user2</code></strong>：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="comment"># 注意这里的主机名是 config 文件中定义的别名</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github-user2:user2/user2.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span> <span class="comment"># 或 gh-pages</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>git@github-user2</code>：这部分告诉 SSH 客户端使用 <code>config</code> 文件中 <code>Host github-user2</code> 的配置，即使用 <code>id_rsa_user2</code> 私钥。</li>
+</ul>
+</li>
+<li><p>回到 <code>Git Bash</code> (在 <code>blog-main</code> 目录下)，执行部署命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy</span><br><span class="line">hexo cl &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>如果出现 <strong>Deploy done</strong>，则说明部署成功了。稍等两分钟，打开浏览器访问：<code>https://user2.github.io</code> ，这时候我们就可以看到博客内容了。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>通过以上步骤，你实现了：</p>
+<ol>
+<li><strong>全局配置</strong>：为第一个 GitHub 账号 (<code>user1</code>) 设置了全局的 Git 用户信息和默认 SSH 密钥。</li>
+<li><strong>本地覆盖</strong>：为第二个博客 (<code>blog-main</code>) 的本地目录设置了特定的 Git 用户信息 (<code>user2</code>)。</li>
+<li><strong>多账号 SSH 管理</strong>：通过生成不同的 SSH 密钥对 (<code>id_rsa</code>, <code>id_rsa_user2</code>) 并配置 <code>~/.ssh/config</code> 文件，实现了使用不同密钥连接到同一个 GitHub 主机 (<code>github.com</code>) 但对应不同账号。</li>
+<li>独立部署<ul>
+<li>第一个博客 (<code>blog-demo</code>) 通过默认的 <code>git@github.com:...</code> 地址部署到 <code>user1.github.io</code>。</li>
+<li>第二个博客 (<code>blog-main</code>) 通过自定义别名 <code>git@github-user2:...</code> 地址部署到 <code>user2.github.io</code>。</li>
+</ul>
+</li>
+</ol>
+<p>现在你可以分别在 <code>blog-demo</code> 和 <code>blog-main</code> 文件夹中独立地开发、预览和部署你的两个博客了。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">John Doe</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2025/07/25/%E4%BD%BF%E7%94%A8%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E7%AE%A1%E7%90%86%E4%B8%A4%E4%B8%AA%20GitHub%20%E8%B4%A6%E5%8F%B7%E7%9A%84%20Hexo%20%E5%8D%9A%E5%AE%A2%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/">http://example.com/2025/07/25/%E4%BD%BF%E7%94%A8%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E7%AE%A1%E7%90%86%E4%B8%A4%E4%B8%AA%20GitHub%20%E8%B4%A6%E5%8F%B7%E7%9A%84%20Hexo%20%E5%8D%9A%E5%AE%A2%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Hexo/">Hexo</a><a class="post-meta__tags" href="/tags/GitHub/">GitHub</a><a class="post-meta__tags" href="/tags/SSH/">SSH</a><a class="post-meta__tags" href="/tags/%E5%A4%9A%E8%B4%A6%E5%8F%B7/">多账号</a></div><div class="post-share"><div class="social-share" data-image="https://halo-bk.oss-cn-beijing.aliyuncs.com/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/%E4%BD%BF%E7%94%A8%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E7%AE%A1%E7%90%86%E4%B8%A4%E4%B8%AA%20GitHub%20%E8%B4%A6%E5%8F%B7%E7%9A%84%20Hexo%20%E5%8D%9A%E5%AE%A2%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2025/07/29/Hexo%20Cactus%20%E4%B8%BB%E9%A2%98%E6%B7%B1%E5%BA%A6%E7%BE%8E%E5%8C%96%E4%B8%8E%E5%AE%9A%E5%88%B6%E6%8C%87%E5%8D%97/" title="Hexo Cactus 主题深度美化与定制指南"><img class="cover" src="https://hexo-bk.oss-cn-beijing.aliyuncs.com/Covers/Hexo%20Cactus%20%E4%B8%BB%E9%A2%98%E6%B7%B1%E5%BA%A6%E7%BE%8E%E5%8C%96%E4%B8%8E%E5%AE%9A%E5%88%B6%E6%8C%87%E5%8D%97.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">Hexo Cactus 主题深度美化与定制指南</div></div><div class="info-2"><div class="info-item-1">前言部署好 Hexo 博客之后，我陷入了典型的选择困难症。好看的主题实在太多了：NexT 功能丰富、Butterfly 炫酷灵动，网上教程也铺天盖地，按理说应该是省心之选。但用了一圈之后，我发现这些主题虽然强大，却略显复杂，配置项繁多，而且走在“撞脸”的边缘——打开十篇博客，九个长得一样。 我不想要千篇一律的模板感，更希望拥有一个简洁、独特、真正属于自己的数字角落。几经尝试与权衡，我最终选择了 Cactus（仙人掌） 主题 （Cactus 主题 GitHub 仓库 ｜官方 Demo 预览 ）—— 一个极简主义者的理想之选。Cactus 提供了四种清新的配色方案，整体风格干净利落，没有冗余的装饰，非常适合个人写作与轻量博客。 但它的简洁也意味着功能有限，中文教程稀少，许多个性化需求——如添加社交链接、集成 Utterances 评论、优化 SEO 等——都需要自行实现。因此，写下这篇教程，记录我如何一步步将 Cactus 从“极简”变为“既简且美”的专属博客。  Cactus 主题安装进入hexo所在的文件夹，执行 1git clone -b main https://github...</div></div></div></a><a class="pagination-related" href="/2025/07/18/%E8%A7%A3%E9%94%81%E4%B8%AA%E6%80%A7%E5%8C%96%E4%BD%93%E9%AA%8C%EF%BC%9ASpicetify%20%E6%94%B9%E9%80%A0%E4%BD%A0%E7%9A%84%20Spotify%20%E5%AE%A2%E6%88%B7%E7%AB%AF/" title="解锁个性化体验：Spicetify 改造你的 Spotify 客户端"><img class="cover" src="https://halo-bk.oss-cn-beijing.aliyuncs.com/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/%E5%88%A9%E7%94%A8%20Spicetify%20%E4%BC%98%E5%8C%96%E4%BD%A0%E7%9A%84Spotify%E4%BD%93%E9%AA%8C.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">解锁个性化体验：Spicetify 改造你的 Spotify 客户端</div></div><div class="info-2"><div class="info-item-1"> 舍不得如此灿烂的某人，照亮了一起走过的日子；忘不了有笑有泪的共同经历，你我之间的情谊是那么真挚；缘起缘灭，人海沉浮，相忘于江湖。几分怅惘，几许祝福，几丝江湖气。                                            ——@知乎网友  前言🌟 Spotify：音乐爱好者的天堂Spotify 是全球领先的正版流媒体音乐服务商之一，汇聚数亿用户，覆盖全球。其音乐库包含超过 ，涵盖 Sony Music、EMI、Warner Music Group 和 Universal Music Group 等四大唱片公司及众多独立厂牌的作品。 ⚠️ 体验上的不足尽管功能强大，Spotify 仍存在一些问题，例如广告频繁打扰（免费用户）、歌词功能不完善以及主题单一等。这些缺陷在一定程度上影响了用户体验。 🔧 Spicetify：个性化 Spotify 的神器为解决上述问题，开源工具 Spicetify 应运而生！它支持用户自定义 Spotify 客户端的外观与功能，包括更改配色方案、安装自定义应用与扩展、屏蔽广告等，让你的音乐体验更自由、更独特！ Spiceti...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2025/07/29/Hexo%20Cactus%20%E4%B8%BB%E9%A2%98%E6%B7%B1%E5%BA%A6%E7%BE%8E%E5%8C%96%E4%B8%8E%E5%AE%9A%E5%88%B6%E6%8C%87%E5%8D%97/" title="Hexo Cactus 主题深度美化与定制指南"><img class="cover" src="https://hexo-bk.oss-cn-beijing.aliyuncs.com/Covers/Hexo%20Cactus%20%E4%B8%BB%E9%A2%98%E6%B7%B1%E5%BA%A6%E7%BE%8E%E5%8C%96%E4%B8%8E%E5%AE%9A%E5%88%B6%E6%8C%87%E5%8D%97.webp" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-07-29</div><div class="info-item-2">Hexo Cactus 主题深度美化与定制指南</div></div><div class="info-2"><div class="info-item-1">前言部署好 Hexo 博客之后，我陷入了典型的选择困难症。好看的主题实在太多了：NexT 功能丰富、Butterfly 炫酷灵动，网上教程也铺天盖地，按理说应该是省心之选。但用了一圈之后，我发现这些主题虽然强大，却略显复杂，配置项繁多，而且走在“撞脸”的边缘——打开十篇博客，九个长得一样。 我不想要千篇一律的模板感，更希望拥有一个简洁、独特、真正属于自己的数字角落。几经尝试与权衡，我最终选择了 Cactus（仙人掌） 主题 （Cactus 主题 GitHub 仓库 ｜官方 Demo 预览 ）—— 一个极简主义者的理想之选。Cactus 提供了四种清新的配色方案，整体风格干净利落，没有冗余的装饰，非常适合个人写作与轻量博客。 但它的简洁也意味着功能有限，中文教程稀少，许多个性化需求——如添加社交链接、集成 Utterances 评论、优化 SEO 等——都需要自行实现。因此，写下这篇教程，记录我如何一步步将 Cactus 从“极简”变为“既简且美”的专属博客。  Cactus 主题安装进入hexo所在的文件夹，执行 1git clone -b main https://github...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">John Doe</div><div class="author-info-description">Your time is limited, so don t waste it living someone else s life. </div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E7%AE%A1%E7%90%86%E4%B8%A4%E4%B8%AA-GitHub-%E8%B4%A6%E5%8F%B7%E7%9A%84-Hexo-%E5%8D%9A%E5%AE%A2%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97"><span class="toc-number">1.</span> <span class="toc-text">使用一台电脑管理两个 GitHub 账号的 Hexo 博客完整指南</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BA%8B%E5%89%8D%E5%87%86%E5%A4%87"><span class="toc-number">1.1.</span> <span class="toc-text">1. 事前准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E9%85%8D%E7%BD%AE-Git-%E5%92%8C%E8%BF%9E%E6%8E%A5%E7%AC%AC%E4%B8%80%E4%B8%AA-GitHub-%E8%B4%A6%E5%8F%B7-user1-account-one-example-com"><span class="toc-number">1.2.</span> <span class="toc-text">2. 配置 Git 和连接第一个 GitHub 账号 (user1 - account_one@example.com)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E9%85%8D%E7%BD%AE%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%B4%A6%E5%8F%B7%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E9%82%AE%E7%AE%B1%EF%BC%88%E5%85%A8%E5%B1%80%EF%BC%89"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1 配置第一个账号的用户名和邮箱（全局）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E4%B8%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%B4%A6%E5%8F%B7%E7%94%9F%E6%88%90%E5%B9%B6%E9%85%8D%E7%BD%AE-SSH-%E5%AF%86%E9%92%A5"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2 为第一个账号生成并配置 SSH 密钥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E6%B5%8B%E8%AF%95%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%B4%A6%E5%8F%B7%E7%9A%84-SSH-%E8%BF%9E%E6%8E%A5"><span class="toc-number">1.2.3.</span> <span class="toc-text">2.3 测试第一个账号的 SSH 连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-%E4%B8%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%B4%A6%E5%8F%B7%E5%88%9B%E5%BB%BA-GitHub-Pages-%E4%BB%93%E5%BA%93"><span class="toc-number">1.2.4.</span> <span class="toc-text">2.4 为第一个账号创建 GitHub Pages 仓库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%88%9D%E5%A7%8B%E5%8C%96%E7%AC%AC%E4%B8%80%E4%B8%AA-Hexo-%E5%8D%9A%E5%AE%A2-blog-demo"><span class="toc-number">1.3.</span> <span class="toc-text">3. 初始化第一个 Hexo 博客 (blog-demo)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E5%A4%B9%E5%B9%B6%E5%AE%89%E8%A3%85-Hexo"><span class="toc-number">1.3.1.</span> <span class="toc-text">3.1 创建项目文件夹并安装 Hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E5%88%9D%E5%A7%8B%E5%8C%96-Hexo-%E9%A1%B9%E7%9B%AE"><span class="toc-number">1.3.2.</span> <span class="toc-text">3.2 初始化 Hexo 项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E5%90%AF%E5%8A%A8%E5%B9%B6%E9%A2%84%E8%A7%88%E6%9C%AC%E5%9C%B0%E5%8D%9A%E5%AE%A2"><span class="toc-number">1.3.3.</span> <span class="toc-text">3.3 启动并预览本地博客</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E9%85%8D%E7%BD%AE%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2%E7%9A%84%E9%83%A8%E7%BD%B2%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.3.4.</span> <span class="toc-text">3.4 配置第一个博客的部署设置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E9%85%8D%E7%BD%AE-Git-%E5%92%8C%E8%BF%9E%E6%8E%A5%E7%AC%AC%E4%BA%8C%E4%B8%AA-GitHub-%E8%B4%A6%E5%8F%B7-user2-account-two-example-com"><span class="toc-number">1.4.</span> <span class="toc-text">4. 配置 Git 和连接第二个 GitHub 账号 (user2 - account_two@example.com)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E4%B8%BA%E7%AC%AC%E4%BA%8C%E4%B8%AA%E8%B4%A6%E5%8F%B7%E7%94%9F%E6%88%90%E6%96%B0%E7%9A%84-SSH-%E5%AF%86%E9%92%A5%E5%AF%B9"><span class="toc-number">1.4.1.</span> <span class="toc-text">4.1 为第二个账号生成新的 SSH 密钥对</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E5%B0%86%E7%AC%AC%E4%BA%8C%E4%B8%AA-SSH-%E5%85%AC%E9%92%A5%E6%B7%BB%E5%8A%A0%E5%88%B0%E7%AC%AC%E4%BA%8C%E4%B8%AA-GitHub-%E8%B4%A6%E5%8F%B7"><span class="toc-number">1.4.2.</span> <span class="toc-text">4.2 将第二个 SSH 公钥添加到第二个 GitHub 账号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E9%85%8D%E7%BD%AE-SSH-%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BB%A5%E5%8C%BA%E5%88%86%E4%B8%8D%E5%90%8C%E8%B4%A6%E5%8F%B7"><span class="toc-number">1.4.3.</span> <span class="toc-text">4.3 配置 SSH 客户端以区分不同账号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-%E4%B8%BA%E7%AC%AC%E4%BA%8C%E4%B8%AA%E8%B4%A6%E5%8F%B7%E5%88%9B%E5%BB%BA-GitHub-Pages-%E4%BB%93%E5%BA%93"><span class="toc-number">1.4.4.</span> <span class="toc-text">4.4 为第二个账号创建 GitHub Pages 仓库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%88%9D%E5%A7%8B%E5%8C%96%E7%AC%AC%E4%BA%8C%E4%B8%AA-Hexo-%E5%8D%9A%E5%AE%A2-blog-main"><span class="toc-number">1.5.</span> <span class="toc-text">5. 初始化第二个 Hexo 博客 (blog-main)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E5%A4%B9%E5%B9%B6%E5%AE%89%E8%A3%85-Hexo"><span class="toc-number">1.5.1.</span> <span class="toc-text">5.1 创建项目文件夹并安装 Hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-%E5%90%AF%E5%8A%A8%E5%B9%B6%E9%A2%84%E8%A7%88%E6%9C%AC%E5%9C%B0%E5%8D%9A%E5%AE%A2"><span class="toc-number">1.5.2.</span> <span class="toc-text">5.2 启动并预览本地博客</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-%E9%85%8D%E7%BD%AE%E7%AC%AC%E4%BA%8C%E4%B8%AA%E5%8D%9A%E5%AE%A2%E7%9A%84%E9%83%A8%E7%BD%B2%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.5.3.</span> <span class="toc-text">5.3 配置第二个博客的部署设置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.6.</span> <span class="toc-text">总结</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/07/29/Hexo%20Cactus%20%E4%B8%BB%E9%A2%98%E6%B7%B1%E5%BA%A6%E7%BE%8E%E5%8C%96%E4%B8%8E%E5%AE%9A%E5%88%B6%E6%8C%87%E5%8D%97/" title="Hexo Cactus 主题深度美化与定制指南"><img src="https://hexo-bk.oss-cn-beijing.aliyuncs.com/Covers/Hexo%20Cactus%20%E4%B8%BB%E9%A2%98%E6%B7%B1%E5%BA%A6%E7%BE%8E%E5%8C%96%E4%B8%8E%E5%AE%9A%E5%88%B6%E6%8C%87%E5%8D%97.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hexo Cactus 主题深度美化与定制指南"/></a><div class="content"><a class="title" href="/2025/07/29/Hexo%20Cactus%20%E4%B8%BB%E9%A2%98%E6%B7%B1%E5%BA%A6%E7%BE%8E%E5%8C%96%E4%B8%8E%E5%AE%9A%E5%88%B6%E6%8C%87%E5%8D%97/" title="Hexo Cactus 主题深度美化与定制指南">Hexo Cactus 主题深度美化与定制指南</a><time datetime="2025-07-29T06:30:00.000Z" title="Created 2025-07-29 14:30:00">2025-07-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/07/25/%E4%BD%BF%E7%94%A8%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E7%AE%A1%E7%90%86%E4%B8%A4%E4%B8%AA%20GitHub%20%E8%B4%A6%E5%8F%B7%E7%9A%84%20Hexo%20%E5%8D%9A%E5%AE%A2%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/" title="使用一台电脑管理两个 GitHub 账号的 Hexo 博客完整指南"><img src="https://halo-bk.oss-cn-beijing.aliyuncs.com/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/%E4%BD%BF%E7%94%A8%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E7%AE%A1%E7%90%86%E4%B8%A4%E4%B8%AA%20GitHub%20%E8%B4%A6%E5%8F%B7%E7%9A%84%20Hexo%20%E5%8D%9A%E5%AE%A2%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用一台电脑管理两个 GitHub 账号的 Hexo 博客完整指南"/></a><div class="content"><a class="title" href="/2025/07/25/%E4%BD%BF%E7%94%A8%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E7%AE%A1%E7%90%86%E4%B8%A4%E4%B8%AA%20GitHub%20%E8%B4%A6%E5%8F%B7%E7%9A%84%20Hexo%20%E5%8D%9A%E5%AE%A2%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/" title="使用一台电脑管理两个 GitHub 账号的 Hexo 博客完整指南">使用一台电脑管理两个 GitHub 账号的 Hexo 博客完整指南</a><time datetime="2025-07-24T16:00:00.000Z" title="Created 2025-07-25 00:00:00">2025-07-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/07/18/%E8%A7%A3%E9%94%81%E4%B8%AA%E6%80%A7%E5%8C%96%E4%BD%93%E9%AA%8C%EF%BC%9ASpicetify%20%E6%94%B9%E9%80%A0%E4%BD%A0%E7%9A%84%20Spotify%20%E5%AE%A2%E6%88%B7%E7%AB%AF/" title="解锁个性化体验：Spicetify 改造你的 Spotify 客户端"><img src="https://halo-bk.oss-cn-beijing.aliyuncs.com/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/%E5%88%A9%E7%94%A8%20Spicetify%20%E4%BC%98%E5%8C%96%E4%BD%A0%E7%9A%84Spotify%E4%BD%93%E9%AA%8C.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="解锁个性化体验：Spicetify 改造你的 Spotify 客户端"/></a><div class="content"><a class="title" href="/2025/07/18/%E8%A7%A3%E9%94%81%E4%B8%AA%E6%80%A7%E5%8C%96%E4%BD%93%E9%AA%8C%EF%BC%9ASpicetify%20%E6%94%B9%E9%80%A0%E4%BD%A0%E7%9A%84%20Spotify%20%E5%AE%A2%E6%88%B7%E7%AB%AF/" title="解锁个性化体验：Spicetify 改造你的 Spotify 客户端">解锁个性化体验：Spicetify 改造你的 Spotify 客户端</a><time datetime="2025-07-18T13:02:00.000Z" title="Created 2025-07-18 21:02:00">2025-07-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/07/15/OpenWrt%20%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%EF%BC%9A%E5%85%A8%E9%9D%A2%E6%8E%8C%E6%8F%A1%20OpenWrt%20%E4%BD%BF%E7%94%A8%E4%B8%8E%E9%85%8D%E7%BD%AE/" title="OpenWrt 从入门到精通：全面掌握 OpenWrt 使用与配置"><img src="https://halo-bk.oss-cn-beijing.aliyuncs.com/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/OpenWrt%20%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%EF%BC%9A%E5%85%A8%E9%9D%A2%E6%8E%8C%E6%8F%A1%20OpenWrt%20%E4%BD%BF%E7%94%A8%E4%B8%8E%E9%85%8D%E7%BD%AE.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="OpenWrt 从入门到精通：全面掌握 OpenWrt 使用与配置"/></a><div class="content"><a class="title" href="/2025/07/15/OpenWrt%20%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%EF%BC%9A%E5%85%A8%E9%9D%A2%E6%8E%8C%E6%8F%A1%20OpenWrt%20%E4%BD%BF%E7%94%A8%E4%B8%8E%E9%85%8D%E7%BD%AE/" title="OpenWrt 从入门到精通：全面掌握 OpenWrt 使用与配置">OpenWrt 从入门到精通：全面掌握 OpenWrt 使用与配置</a><time datetime="2025-07-15T06:30:00.000Z" title="Created 2025-07-15 14:30:00">2025-07-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/15/%E7%94%B3%E8%AF%B7US.KG%E6%B0%B8%E4%B9%85%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D%EF%BC%8C%E6%94%AF%E6%8C%81Cloudflare%E6%89%98%E7%AE%A1%E4%B8%8E%E6%97%A0%E9%99%90%E6%9C%9F%E7%BB%AD%E6%9C%9F%EF%BC%81/" title="申请US.KG永久免费域名，支持Cloudflare托管与无限期续期！"><img src="https://halo-bk.oss-cn-beijing.aliyuncs.com/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/%E7%94%B3%E8%AF%B7US.KG%E6%B0%B8%E4%B9%85%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D%EF%BC%8C%E6%94%AF%E6%8C%81Cloudflare%E6%89%98%E7%AE%A1%E4%B8%8E%E6%97%A0%E9%99%90%E6%9C%9F%E7%BB%AD%E6%9C%9F%EF%BC%81.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="申请US.KG永久免费域名，支持Cloudflare托管与无限期续期！"/></a><div class="content"><a class="title" href="/2024/12/15/%E7%94%B3%E8%AF%B7US.KG%E6%B0%B8%E4%B9%85%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D%EF%BC%8C%E6%94%AF%E6%8C%81Cloudflare%E6%89%98%E7%AE%A1%E4%B8%8E%E6%97%A0%E9%99%90%E6%9C%9F%E7%BB%AD%E6%9C%9F%EF%BC%81/" title="申请US.KG永久免费域名，支持Cloudflare托管与无限期续期！">申请US.KG永久免费域名，支持Cloudflare托管与无限期续期！</a><time datetime="2024-12-15T13:05:00.000Z" title="Created 2024-12-15 21:05:00">2024-12-15</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 By John Doe</span><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.4.3</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
