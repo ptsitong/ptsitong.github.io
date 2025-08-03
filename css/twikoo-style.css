@@ -1,0 +1,188 @@
+/* Twikoo 评论美化 */
+#post-comment .comment-privacy a:hover {
+    color: #409eff;
+}
+
+#post-comment .comment-headline {
+    display: flex;
+    align-items: center;
+}
+
+#post-comment .comment-headline>i {
+    padding: 0 0 0 6px;
+    font-size: 1em;
+}
+
+blockquote> :last-child {
+    margin: auto !important;
+}
+
+.el-input--small .el-input__inner {
+    height: 40px !important;
+}
+
+.el-input-group__prepend {
+    border-radius: 8px 0 0 8px !important;
+}
+
+.el-input__inner {
+    border-radius: 0 8px 8px 0 !important;
+}
+
+.el-textarea__inner {
+    border-radius: 8px !important;
+}
+
+.el-textarea>textarea {
+    height: 120px !important;
+}
+
+.el-button--small {
+    border-radius: 4px !important;
+}
+
+/* 评论编辑块调整 */
+
+/* .tk-submit-action-icon.__markdown {
+    display: none;
+} */
+
+/* markdown编辑快隐藏 */
+
+.tk-avatar {
+    border-radius: 4px !important;
+}
+
+.tk-comment .tk-submit .tk-avatar,
+.tk-replies .tk-avatar {
+    height: 2.5rem !important;
+    width: 2.5rem !important;
+}
+
+.tk-comment .tk-submit .tk-avatar .tk-avatar-img,
+.tk-replies .tk-avatar .tk-avatar-img {
+    height: 2.5rem !important;
+}
+
+.tk-ruser {
+    color: #409eff;
+    opacity: .8;
+}
+
+@media screen and (max-width: 768px) {
+
+    .tk-comment .tk-submit .tk-avatar,
+    .tk-replies .tk-avatar {
+        height: 2rem !important;
+        width: 2rem !important;
+    }
+
+    .tk-comment .tk-submit .tk-avatar .tk-avatar-img,
+    .tk-replies .tk-avatar .tk-avatar-img {
+        height: 2rem !important;
+    }
+}
+
+.tk-nick,
+.tk-meta a strong {
+    font-size: 18px;
+    color: #409eff;
+}
+
+.tk-tag-green {
+    border: var(--style-border) !important;
+    border-radius: 4px !important;
+    margin-left: 0.2rem;
+}
+
+.tk-time {
+    margin-left: 0.4rem;
+}
+
+.tk-extras {
+    padding-bottom: 15px;
+    border-bottom: 1px dashed var(--hr-border);
+}
+
+.tk-extra {
+    border: var(--style-border-always);
+    padding: 4px 6px 4px 6px;
+    border-radius: 8px;
+    margin-right: 4px !important;
+}
+
+.tk-expand {
+    margin-top: 8px;
+    background-color: var(--daliyuer-background);
+    color: var(--daliyuer-fontcolor);
+    border-radius: 8px;
+    border: var(--style-border);
+}
+
+.tk-footer {
+    padding-bottom: 1em;
+}
+
+.tk-footer a {
+    color: #999999;
+}
+
+.tk-footer a:hover {
+    color: #409eff;
+}
+
+.tk-admin-comment-item {
+    padding: 1em;
+    background: var(--global-bg);
+    border-radius: 12px;
+    border: var(--style-border-always);
+    margin-bottom: 12px;
+}
+
+.tk-admin-comment-meta,
+.tk-content {
+    color: var(--daliyuer-fontcolor);
+}
+
+.tk-admin-actions {
+    margin-bottom: 0 !important;
+    border-bottom: 0 !important;
+}
+
+/* 评论管理 */
+
+.tk-panel {
+    border: var(--style-border-always);
+}
+
+.tk-admin-config-groups {
+    padding: 0.5em;
+    background: var(--global-bg);
+    border-radius: 12px;
+    border: var(--style-border-always);
+}
+
+.tk-admin-config-groups .tk-admin-config-group-title {
+    background: var(--daliyuer-background) !important;
+    border-radius: 6px;
+    border: var(--style-border-always);
+    color: var(--daliyuer-fontcolor);
+}
+
+.tk-admin-config-item {
+    color: var(--daliyuer-fontcolor);
+}
+
+/* 配置管理 */
+
+/* 评论区样式 */
+/* Twikoo 评论美化 end*/
+
+:root {
+    --daliyuer-background: #fff;
+    --daliyuer-fontcolor: #363636;
+}
+[data-theme='dark'] {
+    --daliyuer-fontcolor: #F7F7FA;
+    --daliyuer-background: #18171d;
+}
