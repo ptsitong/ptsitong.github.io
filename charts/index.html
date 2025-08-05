@@ -4,8 +4,8 @@
 <meta property="og:site_name" content="不爱说话的人">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://blog-pictures-bucket.oss-cn-beijing.aliyuncs.com/Halo-blog/%E9%9F%A9%E7%AB%8B-%E6%8A%A0%E5%9B%BE%E7%89%88.png">
-<meta property="article:published_time" content="2025-08-05T04:20:30.864Z">
-<meta property="article:modified_time" content="2025-08-05T04:11:22.504Z">
+<meta property="article:published_time" content="2025-08-05T04:36:08.706Z">
+<meta property="article:modified_time" content="2025-08-05T04:20:30.864Z">
 <meta property="article:author" content="AhHui">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://blog-pictures-bucket.oss-cn-beijing.aliyuncs.com/Halo-blog/%E9%9F%A9%E7%AB%8B-%E6%8A%A0%E5%9B%BE%E7%89%88.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://pt.gyhwd.top/charts/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="//busuanzi.ibruce.info"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
@@ -288,7 +288,7 @@
             color: color
           }
         },
-        data: ["Hexo","番剧","软路由","网络代理","OpenWrt","GitHub","SSH","多账号","网站搭建","免费域名"]
+        data: ["Hexo","Cactus","配置","软路由","网络代理","OpenWrt","番剧","GitHub","SSH","多账号"]
       },
       yAxis: {
         name: '文章篇数',
@@ -316,7 +316,7 @@
       series: [{
         name: '文章篇数',
         type: 'bar',
-        data: [{"name":"Hexo","value":2,"path":"tags/Hexo/"},{"name":"番剧","value":1,"path":"tags/番剧/"},{"name":"软路由","value":1,"path":"tags/软路由/"},{"name":"网络代理","value":1,"path":"tags/网络代理/"},{"name":"OpenWrt","value":1,"path":"tags/OpenWrt/"},{"name":"GitHub","value":1,"path":"tags/GitHub/"},{"name":"SSH","value":1,"path":"tags/SSH/"},{"name":"多账号","value":1,"path":"tags/多账号/"},{"name":"网站搭建","value":1,"path":"tags/网站搭建/"},{"name":"免费域名","value":1,"path":"tags/免费域名/"},{"name":"Cactus","value":1,"path":"tags/Cactus/"},{"name":"配置","value":1,"path":"tags/配置/"},{"name":"Spotify 美化","value":1,"path":"tags/Spotify-美化/"},{"name":"Spicetify","value":1,"path":"tags/Spicetify/"},{"name":"Lyricify 歌词","value":1,"path":"tags/Lyricify-歌词/"}],
+        data: [{"name":"Hexo","value":2,"path":"tags/Hexo/"},{"name":"Cactus","value":1,"path":"tags/Cactus/"},{"name":"配置","value":1,"path":"tags/配置/"},{"name":"软路由","value":1,"path":"tags/软路由/"},{"name":"网络代理","value":1,"path":"tags/网络代理/"},{"name":"OpenWrt","value":1,"path":"tags/OpenWrt/"},{"name":"番剧","value":1,"path":"tags/番剧/"},{"name":"GitHub","value":1,"path":"tags/GitHub/"},{"name":"SSH","value":1,"path":"tags/SSH/"},{"name":"多账号","value":1,"path":"tags/多账号/"},{"name":"网站搭建","value":1,"path":"tags/网站搭建/"},{"name":"免费域名","value":1,"path":"tags/免费域名/"},{"name":"Spotify 美化","value":1,"path":"tags/Spotify-美化/"},{"name":"Spicetify","value":1,"path":"tags/Spicetify/"},{"name":"Lyricify 歌词","value":1,"path":"tags/Lyricify-歌词/"}],
         itemStyle: {
           borderRadius: [5, 5, 0, 0],
           color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
@@ -360,11 +360,11 @@
     });
   </script>
 <!-- 文章分类统计图 -->
-<div id="categories-chart" data-parent="true" style="border-radius: 8px; height: 300px; padding: 10px;"></div>
+<div id="categories-chart" data-parent="false" style="border-radius: 8px; height: 300px; padding: 10px;"></div>
   <script id="categoriesChart">
     var color = document.documentElement.getAttribute('data-theme') === 'light' ? '#4c4948' : 'rgba(255,255,255,0.7)'
     var categoriesChart = echarts.init(document.getElementById('categories-chart'), 'light');
-    var categoryParentFlag = true
+    var categoryParentFlag = false
     var categoriesOption = {
       title: {
         text: '文章分类统计图',
@@ -394,7 +394,7 @@
         radius: ['15%', '90%'],
         center: ['50%', '55%'],
         sort: 'desc',
-        data: [{"name":"技术教程","value":3,"path":"categories/技术教程/","id":"cmdy1949a001n7s5m9y90a947","parentId":"0","children":[{"name":"学习笔记","value":2,"path":"categories/技术教程/学习笔记/","id":"cmdy1949d00217s5m34h2g3iz","parentId":"cmdy1949a001n7s5m9y90a947"}]},{"name":"博客相关","value":2,"path":"categories/博客相关/","id":"cmdy1949c001u7s5m3s6c07kt","parentId":"0","children":[{"name":"技术教程","value":1,"path":"categories/博客相关/技术教程/","id":"cmdy1949e00297s5mefigc5dh","parentId":"cmdy1949c001u7s5m3s6c07kt"}]},{"name":"影评书评","value":1,"path":"categories/影评书评/","id":"cmdy19498001f7s5m4lnv73hm","parentId":"0"}],
+        data: [{"name":"技术教程","value":3,"path":"categories/技术教程/","id":"cmdy1rp8o001g3s5m20ef7nix","parentId":"0","children":[{"name":"学习笔记","value":2,"path":"categories/技术教程/学习笔记/","id":"cmdy1rp8s00223s5m14w658nz","parentId":"cmdy1rp8o001g3s5m20ef7nix"}]},{"name":"博客相关","value":2,"path":"categories/博客相关/","id":"cmdy1rp8l00183s5mebqnfhbh","parentId":"0","children":[{"name":"技术教程","value":1,"path":"categories/博客相关/技术教程/","id":"cmdy1rp8q001q3s5mf4ng9hyl","parentId":"cmdy1rp8l00183s5mebqnfhbh"}]},{"name":"影评书评","value":1,"path":"categories/影评书评/","id":"cmdy1rp8p001m3s5m0n327yrc","parentId":"0"}],
         itemStyle: {
           borderColor: '#fff',
           borderWidth: 2,
@@ -416,7 +416,7 @@
           color: color,
           formatter: '{b} : {c} ({d}%)'
         },
-        data: [{"name":"技术教程","value":3,"path":"categories/技术教程/","id":"cmdy1949a001n7s5m9y90a947","parentId":"0"},{"name":"博客相关","value":2,"path":"categories/博客相关/","id":"cmdy1949c001u7s5m3s6c07kt","parentId":"0"},{"name":"学习笔记","value":2,"path":"categories/技术教程/学习笔记/","id":"cmdy1949d00217s5m34h2g3iz","parentId":"cmdy1949a001n7s5m9y90a947"},{"name":"影评书评","value":1,"path":"categories/影评书评/","id":"cmdy19498001f7s5m4lnv73hm","parentId":"0"},{"name":"技术教程","value":1,"path":"categories/博客相关/技术教程/","id":"cmdy1949e00297s5mefigc5dh","parentId":"cmdy1949c001u7s5m3s6c07kt"}],
+        data: [{"name":"技术教程","value":3,"path":"categories/技术教程/","id":"cmdy1rp8o001g3s5m20ef7nix","parentId":"0"},{"name":"博客相关","value":2,"path":"categories/博客相关/","id":"cmdy1rp8l00183s5mebqnfhbh","parentId":"0"},{"name":"学习笔记","value":2,"path":"categories/技术教程/学习笔记/","id":"cmdy1rp8s00223s5m14w658nz","parentId":"cmdy1rp8o001g3s5m20ef7nix"},{"name":"影评书评","value":1,"path":"categories/影评书评/","id":"cmdy1rp8p001m3s5m0n327yrc","parentId":"0"},{"name":"技术教程","value":1,"path":"categories/博客相关/技术教程/","id":"cmdy1rp8q001q3s5mf4ng9hyl","parentId":"cmdy1rp8l00183s5mebqnfhbh"}],
         itemStyle: {
           emphasis: {
             shadowBlur: 10,
